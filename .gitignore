@@ -1,0 +1,7 @@
+node_modules/
+*.apk
+.wdio-*
+logs/
+allure-results/
+allure-report/
+node_modules

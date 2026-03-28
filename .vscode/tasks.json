@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ADB: Show Connected Devices",
+      "type": "shell",
+      "command": "adb devices -l",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      }
+    },
+    {
+      "label": "ADB: Logcat (app logs only)",
+      "type": "shell",
+      "command": "adb logcat -s ReactNative:V ReactNativeJS:V",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: Run All",
+      "type": "shell",
+      "command": "npx wdio run wdio.conf.js",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      }
+    },
+    {
+      "label": "Test: Run Smoke",
+      "type": "shell",
+      "command": "npx wdio run wdio.conf.js --spec tests/specs/smoke.test.js",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      }
+    }
+  ]
+}
