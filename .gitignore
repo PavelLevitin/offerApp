@@ -4,4 +4,6 @@ node_modules/
 logs/
 allure-results/
 allure-report/
+reports/
+screenshots/
 node_modules
