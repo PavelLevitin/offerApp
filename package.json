@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":            "wdio run wdio.conf.js",
-    "test:smoke":      "wdio run wdio.conf.js --spec tests/specs/smoke.test.js",
+    "test": "wdio run wdio.conf.js",
+    "test:smoke": "wdio run wdio.conf.js --spec tests/specs/smoke.test.js",
     "test:onboarding": "wdio run wdio.conf.js --spec tests/specs/onboarding.test.js",
-    "test:fresh":      "wdio run wdio.fresh.conf.js",
-    "test:location":   "wdio run wdio.fresh.conf.js --spec tests/specs/locationPermission.test.js",
-    "report":          "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report"
+    "test:onboarding:fresh": "wdio run wdio.onboarding.conf.js",
+    "test:e2e": "wdio run wdio.e2e.conf.js",
+    "test:fresh": "wdio run wdio.fresh.conf.js",
+    "test:fresh:dev": "cross-env NO_VIDEO=true wdio run wdio.fresh.conf.js",
+    "test:location": "wdio run wdio.fresh.conf.js --spec tests/specs/locationPermission.test.js",
+    "report": "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report",
+    "report:pdf": "node scripts/export-pdf.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +27,9 @@
     "@wdio/spec-reporter": "^9.27.0",
     "allure-commandline": "^2.38.1",
     "chai": "^6.2.2",
+    "cross-env": "^10.1.0",
+    "puppeteer": "^24.40.0",
+    "serve": "^14.2.6",
     "wdio-appium-service": "^0.2.3",
     "wdio-video-reporter": "^6.2.0",
     "webdriverio": "^9.27.0"
