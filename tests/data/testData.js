@@ -10,4 +10,9 @@ module.exports = {
     testPhone: "0570000004",
     testOtp: "951584",
   },
+  registration: {
+    firstName: "user",
+    lastName:  "testing",
+    email:     "automation@test.com",
+  },
 };
