@@ -2,6 +2,7 @@ const path = require('path');
 const { spawn, execSync } = require('child_process');
 
 let appiumPid;
+let runFolder;
 
 function killPort(port) {
   try {
@@ -37,11 +38,11 @@ exports.config = {
       disableWebdriverStepsReporting: false,
       disableWebdriverScreenshotsReporting: false,
     }],
-    ['video', {
-      saveAllVideos: false,       // only save video for failed tests
+    ...(process.env.NO_VIDEO ? [] : [['video', {
+      saveAllVideos: true,        // save video for every test run
       videoSlowdownMultiplier: 3,
       outputDir: './reports/videos',
-    }],
+    }]]),
   ],
   mochaOpts: {
     ui: 'bdd',
@@ -96,22 +97,30 @@ exports.config = {
    */
   afterTest: async function (test, context, { error }) {
     if (error) {
-      const fs        = require('fs');
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const testName  = test.title.replace(/\s+/g, '_');
-      const screenshotPath = `./reports/screenshots/${testName}_${timestamp}.png`;
+      try {
+        const fs             = require('fs');
+        const testName       = test.title.replace(/[^a-zA-Z0-9א-ת]+/g, '_');
+        const screenshotPath = path.resolve(runFolder, `${testName}.png`);
 
-      await driver.saveScreenshot(screenshotPath);
-      console.log(`\n📸 Screenshot saved: ${screenshotPath}`);
+        await driver.saveScreenshot(screenshotPath);
+        console.log(`\n📸 Screenshot saved: ${screenshotPath}`);
 
-      // Attach screenshot to Allure report
-      const screenshot = fs.readFileSync(screenshotPath);
-      const allureReporter = require('@wdio/allure-reporter').default;
-      allureReporter.addAttachment('Failure Screenshot', screenshot, 'image/png');
+        // Attach screenshot to Allure report
+        const screenshot = fs.readFileSync(screenshotPath);
+        const allureReporter = require('@wdio/allure-reporter').default;
+        allureReporter.addAttachment('Failure Screenshot', screenshot, 'image/png');
+      } catch (e) {
+        console.error(`\n❌ Failed to save screenshot: ${e.message}`);
+      }
     }
   },
 
   onPrepare: async function () {
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, '0');
+    runFolder = path.resolve(__dirname, `reports/screenshots/${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${pad(now.getHours())}-${pad(now.getMinutes())}`);
+    require('fs').mkdirSync(runFolder, { recursive: true });
+
     console.log('Clearing port 4723...');
     killPort(4723);
 
@@ -143,6 +152,7 @@ exports.config = {
     });
 
     console.log(`Appium server is ready (PID ${appiumPid}).`);
+
   },
 
   onComplete: function () {
