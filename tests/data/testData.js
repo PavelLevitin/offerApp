@@ -15,4 +15,8 @@ module.exports = {
     lastName:  "testing",
     email:     "automation@test.com",
   },
+  importantDates: {
+    birthYear:       '1990',
+    anniversaryYear: '2025',
+  },
 };

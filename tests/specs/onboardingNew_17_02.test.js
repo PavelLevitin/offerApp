@@ -11,6 +11,7 @@ const DeleteAccountPage    = require('../pageObjects/DeleteAccountPage');
 const testData             = require('../data/testData');
 const sessionData          = require('../data/sessionData');
 const { clearField }       = require('../helpers/typeText');
+const { faker }            = require('@faker-js/faker');
 
 /**
  * Fresh Onboarding Full Flow
@@ -415,12 +416,73 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('Important dates', () => {
 
+    it('should display all UI content on the important dates page', async () => {
+      // title / header
+      const header = $('//*[contains(@content-desc, "הצטרפות למועדון") or contains(@text, "הצטרפות למועדון")]');
+      await expect(header).toBeDisplayed();
+
+      // fields
+      await expect(ImportantDatesPage.birthdayPicker).toBeDisplayed();
+      await expect(ImportantDatesPage.weddingAnniversaryPicker).toBeDisplayed();
+
+      // CTA
+      await expect(ImportantDatesPage.continueButton).toBeDisplayed();
+    });
+
     it('should display the important dates screen', async () => {
       await ImportantDatesPage.assertScreenVisible();
     });
 
+    it('should have CTA disabled until birthday is selected', async () => {
+      const disabledCta = $('//*[@content-desc="המשך" and @enabled="false"]');
+      await expect(disabledCta).toExist();
+    });
+
+    it('should show error and keep CTA disabled when birthday is under 18 years', async () => {
+      await ImportantDatesPage.selectBirthday('2010'); // 2026 - 2010 = 16 years old → under 18
+      const ageError = $('//*[contains(@content-desc, "עליך להיות בן 18 לפחות כדי להירשם") or contains(@text, "עליך להיות בן 18 לפחות כדי להירשם")]');
+      await ageError.waitForDisplayed({ timeout: 5000 });
+      await expect(ageError).toBeDisplayed();
+      const disabledCta = $('//*[@content-desc="המשך" and @enabled="false"]');
+      await expect(disabledCta).toExist();
+    });
+
+    it('should clear error and enable CTA when valid birthday is selected', async () => {
+      await ImportantDatesPage.selectBirthday(testData.importantDates.birthYear);
+      const ageError = $('//*[contains(@content-desc, "עליך להיות בן 18 לפחות כדי להירשם") or contains(@text, "עליך להיות בן 18 לפחות כדי להירשם")]');
+      await expect(ageError).not.toBeDisplayed();
+      const enabledCta = $('//*[@content-desc="המשך" and @enabled="true"]');
+      await expect(enabledCta).toExist();
+    });
+
+    it('should select wedding anniversary date', async () => {
+      await ImportantDatesPage.selectWeddingAnniversary(testData.importantDates.anniversaryYear);
+      // field shows selected date as DD/MM/YY inside the inner view
+      const fieldText = await $('//*[contains(@hint, "יום נישואין")]').$('android.view.View').getAttribute('text');
+      expect(fieldText).toContain('25'); // year 2025 → shown as DD/MM/25
+      // CTA stays enabled — driven by birthday (>18 years) selected in the previous test, not by anniversary
+      const enabledCta = $('//*[@content-desc="המשך" and @enabled="true"]');
+      await expect(enabledCta).toExist();
+    });
+
+    it('should add up to 4 family members and verify all appear in the list', async () => {
+      for (let i = 0; i < 4; i++) {
+        if (i > 0) {
+          await ImportantDatesPage.tapAddMember(); // tap "+" and scroll up
+        }
+        const name = faker.person.firstName();
+        const year = faker.number.int({ min: 1980, max: 2020 }).toString(); // at least 5 years ago
+        await ImportantDatesPage.fillFamilyMember(name, year);
+      }
+      // "+" button should be gone after 4 members
+      await expect(ImportantDatesPage.addFamilyMember).not.toBeDisplayed();
+      // all 4 remove buttons visible — confirms all members are in the list
+      const removeButtons = await $$('~remove_family_member_button');
+      expect(removeButtons.length).toBe(4);
+    });
+
     it('should fill birthday and continue', async () => {
-      const birthYear = '1990';
+      const birthYear = testData.importantDates.birthYear;
       await ImportantDatesPage.selectBirthday(birthYear);
       sessionData.birthYear = birthYear;
       await ImportantDatesPage.tapContinue();
