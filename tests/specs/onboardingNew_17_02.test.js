@@ -484,6 +484,17 @@ describe('Fresh Onboarding Full Flow', () => {
       expect(removeButtons.length).toBe(4);
     });
 
+    it('should remove one family member and verify total is 3', async () => {
+      // tap the first remove ("-") button
+      const removeButtons = await $$('~remove_family_member_button');
+      await removeButtons[0].click();
+      await driver.pause(500);
+      // confirm only 3 remain
+      const remainingButtons = await $$('~remove_family_member_button');
+      expect(remainingButtons.length).toBe(3);
+      collectedMembers.shift(); // keep collectedMembers in sync
+    });
+
     it('should fill birthday and continue', async () => {
       const birthYear = testData.importantDates.birthYear;
       await ImportantDatesPage.selectBirthday(birthYear);
