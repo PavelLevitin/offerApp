@@ -416,6 +416,8 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('Important dates', () => {
 
+    const collectedMembers = [];
+
     it('should display all UI content on the important dates page', async () => {
       // title / header
       const header = $('//*[contains(@content-desc, "הצטרפות למועדון") or contains(@text, "הצטרפות למועדון")]');
@@ -473,6 +475,7 @@ describe('Fresh Onboarding Full Flow', () => {
         const name = faker.person.firstName();
         const year = faker.number.int({ min: 1980, max: 2020 }).toString(); // at least 5 years ago
         await ImportantDatesPage.fillFamilyMember(name, year);
+        collectedMembers.push({ name, year });
       }
       // "+" button should be gone after 4 members
       await expect(ImportantDatesPage.addFamilyMember).not.toBeDisplayed();
@@ -484,8 +487,11 @@ describe('Fresh Onboarding Full Flow', () => {
     it('should fill birthday and continue', async () => {
       const birthYear = testData.importantDates.birthYear;
       await ImportantDatesPage.selectBirthday(birthYear);
-      sessionData.birthYear = birthYear;
       await ImportantDatesPage.tapContinue();
+      // save all Important dates data at the moment of continuing
+      sessionData.birthYear       = birthYear;
+      sessionData.anniversaryYear = testData.importantDates.anniversaryYear;
+      sessionData.familyMembers   = [...collectedMembers];
       await CategoryAndShopsPage.waitForScreen();
     });
 
