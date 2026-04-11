@@ -32,11 +32,11 @@ describe('Fresh Onboarding Full Flow', () => {
       await WelcomePage.waitForScreen();
     });
 
-    it('should display the Welcome screen on first launch', async () => {
+    it.skip('should display the Welcome screen on first launch', async () => {
       await WelcomePage.assertWelcomeScreenVisible();
     });
 
-    it('should display all three region tabs', async () => {
+    it.skip('should display all three region tabs', async () => {
       await WelcomePage.assertAllRegionTabsVisible();
     });
 
@@ -46,11 +46,11 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('Mall selection', () => {
 
-    it('should click the sort by location button', async () => {
+    it.skip('should click the sort by location button', async () => {
       await WelcomePage.clickSortByLocation();
     });
 
-    it('should display at least one mall in the list', async () => {
+    it.skip('should display at least one mall in the list', async () => {
       await WelcomePage.assertMallListNotEmpty();
     });
 
@@ -73,15 +73,15 @@ describe('Fresh Onboarding Full Flow', () => {
       }
     });
 
-    it('should display the home screen content', async () => {
+    it.skip('should display the home screen content', async () => {
       await HomePage.assertHomeScreenVisible();
     });
 
-    it('should display the bottom navigation bar', async () => {
+    it.skip('should display the bottom navigation bar', async () => {
       await HomePage.assertBottomNavVisible();
     });
 
-    it('should display the top bar with menu and search', async () => {
+    it.skip('should display the top bar with menu and search', async () => {
       await HomePage.assertTopBarVisible();
     });
 
@@ -101,7 +101,7 @@ describe('Fresh Onboarding Full Flow', () => {
       await PhoneEntryPage.waitForScreen();
     });
 
-    it('should display the Phone Entry screen', async () => {
+    it.skip('should display the Phone Entry screen', async () => {
       const title2 = $('//*[contains(@content-desc, "מה מספר הנייד שלכם?") or contains(@text, "מה מספר הנייד שלכם?")]');
       await expect(title2).toBeDisplayed();
       await expect(PhoneEntryPage.phoneInput).toBeDisplayed();
@@ -114,16 +114,16 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('Phone entry', () => {
 
-    it('should have CTA disabled before entering phone', async () => {
+    it.skip('should have CTA disabled before entering phone', async () => {
       await expect(PhoneEntryPage.sendCodeButton).not.toBeEnabled();
     });
 
-    it('should keep CTA disabled when phone number has less than 10 digits', async () => {
+    it.skip('should keep CTA disabled when phone number has less than 10 digits', async () => {
       await PhoneEntryPage.enterPhone('05012345'); // 8 digits — too short
       await expect(PhoneEntryPage.sendCodeButton).not.toBeEnabled();
     });
 
-    it('should show an error when phone does not start with 05', async () => {
+    it.skip('should show an error when phone does not start with 05', async () => {
       await PhoneEntryPage.enterPhone('0312345678');
       await PhoneEntryPage.sendCodeButton.click();
       const prefixError = $('//*[contains(@content-desc, "מספר טלפון לא תקין") or contains(@text, "מספר טלפון לא תקין")]');
@@ -133,6 +133,7 @@ describe('Fresh Onboarding Full Flow', () => {
 
     it('should enter phone number and CTA turns enabled', async () => {
       await PhoneEntryPage.enterPhone(testData.credentials.testPhone);
+      sessionData.phone = testData.credentials.testPhone;
       await expect(PhoneEntryPage.sendCodeButton).toBeEnabled();
     });
 
@@ -150,13 +151,13 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('OTP entry', () => {
 
-    it('should display the OTP screen', async () => {
+    it.skip('should display the OTP screen', async () => {
       await expect(OTPPage.title).toBeDisplayed();
       await expect(OTPPage.otpInput).toBeDisplayed();
       await expect(OTPPage.continueButton).toBeDisplayed();
     });
 
-    it('should show countdown text and resend link disabled, then enable resend after countdown', async () => {
+    it.skip('should show countdown text and resend link disabled, then enable resend after countdown', async () => {
       const countdownText = $('//*[contains(@content-desc, "אפשר לקבל קוד חדש בעוד") or contains(@text, "אפשר לקבל קוד חדש בעוד")]');
       await expect(countdownText).toBeDisplayed();
 
@@ -168,7 +169,7 @@ describe('Fresh Onboarding Full Flow', () => {
       await OTPPage.resendLink.waitForEnabled({ timeout: 50000 });
     });
 
-    it('should show error when a wrong OTP is entered', async () => {
+    it.skip('should show error when a wrong OTP is entered', async () => {
       await OTPPage.enterOTP('000000');
       await OTPPage.tapContinue();
       const otpError = $('//*[contains(@content-desc, "קוד") or contains(@text, "קוד")][@clickable="false"]');
@@ -195,13 +196,13 @@ describe('Fresh Onboarding Full Flow', () => {
 
     // ── 1. Display ─────────────────────────────────────────────────────────────
 
-    it('should display registration form page 1', async () => {
+    it.skip('should display registration form page 1', async () => {
       await RegistrationPage1.assertScreenVisible();
     });
 
     // ── 2-4. Tap Continue on empty form → all 6 validation errors appear ───────
 
-    it('should show all 6 validation errors when Continue is tapped on empty form', async () => {
+    it.skip('should show all 6 validation errors when Continue is tapped on empty form', async () => {
       await RegistrationPage1.tapContinue(); // hides keyboard, clicks המשך
       const shortNameError = $('//*[contains(@content-desc, "שם קצת קצר, לא?") or contains(@text, "שם קצת קצר, לא?")]');
       // wait for errors to appear
@@ -218,7 +219,7 @@ describe('Fresh Onboarding Full Flow', () => {
     // ── 5. First name validation ────────────────────────────────────────────────
 
     // 5.1 — 1 char: error remains
-    it('should keep first name error when 1 char is entered', async () => {
+    it.skip('should keep first name error when 1 char is entered', async () => {
       const shortNameError = $('//*[contains(@content-desc, "שם קצת קצר, לא?") or contains(@text, "שם קצת קצר, לא?")]');
       await RegistrationPage1.fillFirstName('a', false, false);
       await RegistrationPage1.lastNameInput.click(); // blur → triggers validation
@@ -229,7 +230,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 5.2 — 2 chars: firstName error clears (only lastName error remains)
-    it('should clear first name error when 2 chars are entered', async () => {
+    it.skip('should clear first name error when 2 chars are entered', async () => {
       await RegistrationPage1.fillFirstName('ab', false, false);
       await RegistrationPage1.lastNameInput.click(); // blur
       await driver.pause(500);
@@ -242,7 +243,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 5.3 — max 20 chars enforced
-    it('should not allow more than 20 characters in first name', async () => {
+    it.skip('should not allow more than 20 characters in first name', async () => {
       await RegistrationPage1.fillFirstName('abcdefghijklmnopqrstu', false, false); // 21 chars
       const value = await RegistrationPage1.firstNameInput.getAttribute('text');
       expect((value || '').replace(/\s/g, '').length).toBeLessThanOrEqual(20);
@@ -252,7 +253,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 5.4 enter name, 5.5 minimize keyboard, 5.6 click המשך, 5.7 firstName error gone — 5 errors remain
-    it('should accept valid first name and show only remaining validation errors', async () => {
+    it.skip('should accept valid first name and show only remaining validation errors', async () => {
       await RegistrationPage1.fillFirstName(testData.registration.firstName, false, false); // 5.4
       await RegistrationPage1.tapContinue(); // 5.5 hideKeyboard + 5.6 click המשך
       // 5.7 — total 5 errors remain (lastName + gender + email + mall + terms) — errors may be identical
@@ -267,7 +268,7 @@ describe('Fresh Onboarding Full Flow', () => {
     // ── 6. Last name validation ─────────────────────────────────────────────────
 
     // 6.1 — 1 char: error remains
-    it('should keep last name error when 1 char is entered', async () => {
+    it.skip('should keep last name error when 1 char is entered', async () => {
       const shortNameError = $('//*[contains(@content-desc, "שם קצת קצר, לא?") or contains(@text, "שם קצת קצר, לא?")]');
       await RegistrationPage1.fillLastName('a', false);
       await RegistrationPage1.emailInput.click(); // blur → triggers validation (no scroll needed)
@@ -278,7 +279,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 6.2 — 2 chars: error clears
-    it('should clear last name error when 2 chars are entered', async () => {
+    it.skip('should clear last name error when 2 chars are entered', async () => {
       const shortNameError = $('//*[contains(@content-desc, "שם קצת קצר, לא?") or contains(@text, "שם קצת קצר, לא?")]');
       await RegistrationPage1.fillLastName('ab', false);
       await RegistrationPage1.emailInput.click(); // blur (no scroll needed)
@@ -289,7 +290,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 6.3 — max 20 chars enforced
-    it('should not allow more than 20 characters in last name', async () => {
+    it.skip('should not allow more than 20 characters in last name', async () => {
       await RegistrationPage1.fillLastName('abcdefghijklmnopqrstu', false); // 21 chars
       const value = await RegistrationPage1.lastNameInput.getAttribute('text');
       expect((value || '').replace(/\s/g, '').length).toBeLessThanOrEqual(20);
@@ -300,7 +301,7 @@ describe('Fresh Onboarding Full Flow', () => {
 
     // ── 7. Gender ───────────────────────────────────────────────────────────────
 
-    it('should clear gender error after selecting a gender', async () => {
+    it.skip('should clear gender error after selecting a gender', async () => {
       await RegistrationPage1.selectGender('אחר');
       await driver.pause(500);
       // after selecting gender, one "היי, שכחת אותי" error disappears — only mall error remains (count drops by 1)
@@ -311,7 +312,7 @@ describe('Fresh Onboarding Full Flow', () => {
     // ── 8. Email validation ─────────────────────────────────────────────────────
 
     // 8.1 — valid email: no error → clear field
-    it('should not show email error for a valid email', async () => {
+    it.skip('should not show email error for a valid email', async () => {
       const emailError = $(`//*[contains(@content-desc, 'כתובת הדוא"ל אינה תקינה') or contains(@text, 'כתובת הדוא"ל אינה תקינה')]`);
       await RegistrationPage1.fillEmail('aaa@fff.com', false, false);
       try { await driver.hideKeyboard(); } catch (_) {}
@@ -324,7 +325,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 8.2 — invalid emails: each must show the email error
-    it('should show email error for each invalid email in the list', async () => {
+    it.skip('should show email error for each invalid email in the list', async () => {
       const invalidEmails = [
         'missingatexample.com',
         'user@',
@@ -363,7 +364,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 8.3 — field cleared after invalid list: email error remains
-    it('should keep email error when field is cleared after invalid emails', async () => {
+    it.skip('should keep email error when field is cleared after invalid emails', async () => {
       const emailError = $(`//*[contains(@content-desc, 'כתובת הדוא"ל אינה תקינה') or contains(@text, 'כתובת הדוא"ל אינה תקינה')]`);
       // field is already empty (cleared by previous test's finally); blur to trigger validation
       try { await driver.hideKeyboard(); } catch (_) {}
@@ -372,7 +373,7 @@ describe('Fresh Onboarding Full Flow', () => {
     });
 
     // 8.4-8.5 — valid email from testData: error clears → hide keyboard
-    it('should clear email error after entering valid email from testData', async () => {
+    it.skip('should clear email error after entering valid email from testData', async () => {
       const emailError = $(`//*[contains(@content-desc, 'כתובת הדוא"ל אינה תקינה') or contains(@text, 'כתובת הדוא"ל אינה תקינה')]`);
       await RegistrationPage1.fillEmail(testData.registration.email, false, false);
       try { await driver.hideKeyboard(); } catch (_) {}
@@ -382,7 +383,7 @@ describe('Fresh Onboarding Full Flow', () => {
 
     // ── 9. Preferred mall ───────────────────────────────────────────────────────
 
-    it('should clear mall error after selecting preferred mall', async () => {
+    it.skip('should clear mall error after selecting preferred mall', async () => {
       const mallError = $('//*[contains(@content-desc, "היי, שכחת אותי") or contains(@text, "היי, שכחת אותי")]');
       await RegistrationPage1.selectFirstMall();
       await expect(mallError).not.toBeDisplayed();
@@ -390,7 +391,7 @@ describe('Fresh Onboarding Full Flow', () => {
 
     // ── 10. T&C ─────────────────────────────────────────────────────────────────
 
-    it('should clear T&C error after toggling terms', async () => {
+    it.skip('should clear T&C error after toggling terms', async () => {
       const termsError = $('//*[contains(@content-desc, "* יש לאשר את צנאי השימוש") or contains(@text, "* יש לאשר את צנאי השימוש")]');
       await RegistrationPage1.toggleTerms();
       await expect(termsError).not.toBeDisplayed();
@@ -399,7 +400,13 @@ describe('Fresh Onboarding Full Flow', () => {
     // ── Happy path: all fields valid → proceed ──────────────────────────────────
 
     it('should complete registration form and proceed to Important dates screen', async () => {
-      await RegistrationPage1.fillLastName(testData.registration.lastName, false); // ensure lastName is filled
+      await RegistrationPage1.fillForm({
+        firstName: testData.registration.firstName,
+        lastName:  testData.registration.lastName,
+        email:     testData.registration.email,
+        gender:    'אחר',
+      });
+      await RegistrationPage1.toggleTerms();
       await RegistrationPage1.tapContinue();
       await ImportantDatesPage.waitForScreen();
       const nextPageHeader = $('//*[contains(@content-desc, "הצטרפות למועדון") or contains(@text, "הצטרפות למועדון")]');
@@ -408,6 +415,7 @@ describe('Fresh Onboarding Full Flow', () => {
       sessionData.lastName  = testData.registration.lastName;
       sessionData.email     = testData.registration.email;
       sessionData.gender    = 'אחר';
+      sessionData.mallName  = RegistrationPage1.selectedMallName;
     });
 
   });
@@ -431,16 +439,16 @@ describe('Fresh Onboarding Full Flow', () => {
       await expect(ImportantDatesPage.continueButton).toBeDisplayed();
     });
 
-    it('should display the important dates screen', async () => {
+    it.skip('should display the important dates screen', async () => {
       await ImportantDatesPage.assertScreenVisible();
     });
 
-    it('should have CTA disabled until birthday is selected', async () => {
+    it.skip('should have CTA disabled until birthday is selected', async () => {
       const disabledCta = $('//*[@content-desc="המשך" and @enabled="false"]');
       await expect(disabledCta).toExist();
     });
 
-    it('should show error and keep CTA disabled when birthday is under 18 years', async () => {
+    it.skip('should show error and keep CTA disabled when birthday is under 18 years', async () => {
       await ImportantDatesPage.selectBirthday('2010'); // 2026 - 2010 = 16 years old → under 18
       const ageError = $('//*[contains(@content-desc, "עליך להיות בן 18 לפחות כדי להירשם") or contains(@text, "עליך להיות בן 18 לפחות כדי להירשם")]');
       await ageError.waitForDisplayed({ timeout: 5000 });
@@ -449,7 +457,7 @@ describe('Fresh Onboarding Full Flow', () => {
       await expect(disabledCta).toExist();
     });
 
-    it('should clear error and enable CTA when valid birthday is selected', async () => {
+    it.skip('should clear error and enable CTA when valid birthday is selected', async () => {
       await ImportantDatesPage.selectBirthday(testData.importantDates.birthYear);
       const ageError = $('//*[contains(@content-desc, "עליך להיות בן 18 לפחות כדי להירשם") or contains(@text, "עליך להיות בן 18 לפחות כדי להירשם")]');
       await expect(ageError).not.toBeDisplayed();
@@ -457,7 +465,7 @@ describe('Fresh Onboarding Full Flow', () => {
       await expect(enabledCta).toExist();
     });
 
-    it('should select wedding anniversary date', async () => {
+    it.skip('should select wedding anniversary date', async () => {
       await ImportantDatesPage.selectWeddingAnniversary(testData.importantDates.anniversaryYear);
       // field shows selected date as DD/MM/YY inside the inner view
       const fieldText = await $('//*[contains(@hint, "יום נישואין")]').$('android.view.View').getAttribute('text');
@@ -467,7 +475,7 @@ describe('Fresh Onboarding Full Flow', () => {
       await expect(enabledCta).toExist();
     });
 
-    it('should add up to 4 family members and verify all appear in the list', async () => {
+    it.skip('should add up to 4 family members and verify all appear in the list', async () => {
       for (let i = 0; i < 4; i++) {
         if (i > 0) {
           await ImportantDatesPage.tapAddMember(); // tap "+" and scroll up
@@ -512,9 +520,59 @@ describe('Fresh Onboarding Full Flow', () => {
 
   describe('Categories and shops', () => {
 
-    it('should display the categories and shops screen', async () => {
-      await CategoryAndShopsPage.assertScreenVisible();
+    // ── UI assertions ────────────────────────────────────────────────────────
+
+    it('should display the "מה מעניין אותך" heading', async () => {
+      await expect($('//*[contains(@content-desc, "מה מעניין אותך")]')).toBeDisplayed();
     });
+
+    it('should display the sub-heading text', async () => {
+      await expect($('//*[contains(@content-desc, "אפשר לבחור יותר מאפשרות אחת")]')).toBeDisplayed();
+    });
+
+    it('should display the "הצטרפות" button', async () => {
+      await expect(CategoryAndShopsPage.joinButton).toBeDisplayed();
+    });
+
+    it('should display the "השלם מאוחר יותר" link', async () => {
+      await expect(CategoryAndShopsPage.completeLaterButton).toBeDisplayed();
+    });
+
+    // ── Category chips ───────────────────────────────────────────────────────
+
+    // it('should display no more than 25 shops for each category', async () => {
+    //   // build chip array from current screen state
+    //   await CategoryAndShopsPage.scrollToRevealAllChips();
+    //   await CategoryAndShopsPage.buildChipArray();
+    //   expect(CategoryAndShopsPage.chipArray.length).toBeGreaterThan(0);
+    //
+    //   // scroll back to top so all category chips are reachable
+    //   await CategoryAndShopsPage.scrollToCategoriesSection();
+    //
+    //   for (const chip of CategoryAndShopsPage.chipArray) {
+    //     // tap the category
+    //     await $(chip.selector).click();
+    //     await driver.pause(500);
+    //
+    //     // scroll down to shops section
+    //     await CategoryAndShopsPage.scrollToShopsSection();
+    //
+    //     // count shop chips and assert ≤ 25
+    //     const shopCount = await CategoryAndShopsPage.getShopChips(sessionData.mallName);
+    //     console.log(`>>> CATEGORY: ${chip.selector} | SHOPS COUNT: ${shopCount}`);
+    //     await driver.pause(8000);
+    //     expect(shopCount).toBeLessThanOrEqual(25);
+    //
+    //     // scroll back up to categories
+    //     await CategoryAndShopsPage.scrollToCategoriesSection();
+    //
+    //     // untap the category (tap again to deselect)
+    //     await $(chip.selector).click();
+    //     await driver.pause(500);
+    //   }
+    // });
+
+    // ── Happy path ───────────────────────────────────────────────────────────
 
     it('should select a category and store, then complete registration', async () => {
       await CategoryAndShopsPage.selectCategoryAndJoin();

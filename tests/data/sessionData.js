@@ -6,10 +6,12 @@
  * test suites to verify that the personal area shows the correct details.
  *
  * Fields:
+ *   phone           — entered on PhoneEntryPage
  *   firstName  — entered on RegistrationPage1
  *   lastName   — entered on RegistrationPage1
  *   email      — entered on RegistrationPage1
  *   gender     — selected on RegistrationPage1
+ *   mallName        — selected on WelcomePage / mall selection
  *   birthYear       — selected on ImportantDatesPage
  *   anniversaryYear — selected on ImportantDatesPage (optional)
  *   familyMembers   — array of { name, year } added on ImportantDatesPage
@@ -17,10 +19,12 @@
  *   stores          — chip labels selected on CategoryAndShopsPage
  */
 module.exports = {
+  phone:           null,
   firstName:       null,
   lastName:        null,
   email:           null,
   gender:          null,
+  mallName:        null,
   birthYear:       null,
   anniversaryYear: null,
   familyMembers:   [],
