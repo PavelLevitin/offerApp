@@ -13,14 +13,17 @@
  *   birthYear       — selected on ImportantDatesPage
  *   anniversaryYear — selected on ImportantDatesPage (optional)
  *   familyMembers   — array of { name, year } added on ImportantDatesPage
+ *   phone           — entered on PhoneEntryPage
  *   categories      — chip labels selected on CategoryAndShopsPage
  *   stores          — chip labels selected on CategoryAndShopsPage
  */
 module.exports = {
+  phone:           null,
   firstName:       null,
   lastName:        null,
   email:           null,
   gender:          null,
+  mallName:        null,
   birthYear:       null,
   anniversaryYear: null,
   familyMembers:   [],

@@ -133,6 +133,7 @@ describe('Fresh Onboarding Full Flow', () => {
 
     it('should enter phone number and CTA turns enabled', async () => {
       await PhoneEntryPage.enterPhone(testData.credentials.testPhone);
+      sessionData.phone = testData.credentials.testPhone;
       await expect(PhoneEntryPage.sendCodeButton).toBeEnabled();
     });
 
@@ -414,6 +415,7 @@ describe('Fresh Onboarding Full Flow', () => {
       sessionData.lastName  = testData.registration.lastName;
       sessionData.email     = testData.registration.email;
       sessionData.gender    = 'אחר';
+      sessionData.mallName  = RegistrationPage1.selectedMallName;
     });
 
   });
@@ -518,6 +520,40 @@ describe('Fresh Onboarding Full Flow', () => {
     it('should display the "השלם מאוחר יותר" link', async () => {
       await expect(CategoryAndShopsPage.completeLaterButton).toBeDisplayed();
     });
+
+    // ── Category chips ───────────────────────────────────────────────────────
+
+    // it('should display no more than 25 shops for each category', async () => {
+    //   // build chip array from current screen state
+    //   await CategoryAndShopsPage.scrollToRevealAllChips();
+    //   await CategoryAndShopsPage.buildChipArray();
+    //   expect(CategoryAndShopsPage.chipArray.length).toBeGreaterThan(0);
+    //
+    //   // scroll back to top so all category chips are reachable
+    //   await CategoryAndShopsPage.scrollToCategoriesSection();
+    //
+    //   for (const chip of CategoryAndShopsPage.chipArray) {
+    //     // tap the category
+    //     await $(chip.selector).click();
+    //     await driver.pause(500);
+    //
+    //     // scroll down to shops section
+    //     await CategoryAndShopsPage.scrollToShopsSection();
+    //
+    //     // count shop chips and assert ≤ 25
+    //     const shopCount = await CategoryAndShopsPage.getShopChips(sessionData.mallName);
+    //     console.log(`>>> CATEGORY: ${chip.selector} | SHOPS COUNT: ${shopCount}`);
+    //     await driver.pause(8000);
+    //     expect(shopCount).toBeLessThanOrEqual(25);
+    //
+    //     // scroll back up to categories
+    //     await CategoryAndShopsPage.scrollToCategoriesSection();
+    //
+    //     // untap the category (tap again to deselect)
+    //     await $(chip.selector).click();
+    //     await driver.pause(500);
+    //   }
+    // });
 
     // ── Happy path ───────────────────────────────────────────────────────────
 

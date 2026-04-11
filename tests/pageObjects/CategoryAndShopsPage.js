@@ -182,13 +182,33 @@ class CategoryAndShopsPage {
    *   ]
    */
   async buildChipArray() {
+    // Determine the Y position of the "ובאילו חנויות?" heading so we can
+    // keep only chips that appear ABOVE it (i.e. category chips, not stores).
+    // Using bounds comparison avoids the following:: axis predicate which
+    // crashes the Android XPath processor.
+    let headingY = Infinity;
+    const headings = await $$('//*[contains(@content-desc, "ובאילו חנויות")]');
+    if (headings.length > 0) {
+      const hBounds = await headings[0].getAttribute('bounds');
+      const hMatch = hBounds && hBounds.match(/\[(\d+),(\d+)\]/);
+      if (hMatch) headingY = parseInt(hMatch[2], 10); // top-Y of heading
+    }
+
     const chips = await $$(this._chipXpath);
     const result = [];
 
     for (let i = 0; i < chips.length; i++) {
+      // Skip chips whose top-Y is at or below the heading
+      const bounds = await chips[i].getAttribute('bounds');
+      const bMatch = bounds && bounds.match(/\[(\d+),(\d+)\]/);
+      if (bMatch && parseInt(bMatch[2], 10) >= headingY) continue;
+
       const desc = await chips[i].getAttribute('content-desc');
+      // skip elements with null or empty content-desc
+      if (!desc) continue;
       // content-desc format is "<name>\n<name>" — take the first part
       const name = desc.split('\n')[0].trim();
+      if (!name) continue;
       result.push({
         index: i,
         selector: `//*[contains(@content-desc, "${name}")]`,
@@ -218,38 +238,34 @@ class CategoryAndShopsPage {
     this.selectedCategories = [];
     this.selectedStores     = [];
 
-    // ── 1 & 2: reveal all chips and build the dynamic array ──────────────────
-    await this.scrollToRevealAllChips();
-    await this.buildChipArray();
+    // ── 1: scroll to top so category chips are stable and visible ────────────
+    await this.scrollToCategoriesSection();
+    await driver.pause(500);
 
-    // ── 3: tap first two categories by position ──────────────────────────────
-    const cats = await $$(this._chipXpath);
-    console.log(`[CategoryAndShopsPage] cats found: ${cats.length}`);
+    // ── 2: tap first two categories — re-fetch before each click ─────────────
+    const cats0 = await $$(this._chipXpath);
+    console.log(`[CategoryAndShopsPage] cats found: ${cats0.length}`);
 
-    this.selectedCategories.push(await cats[0].getAttribute('content-desc'));
-    console.log(`[CategoryAndShopsPage] tapping cat[0]: ${this.selectedCategories[0]}`);
-    await cats[0].click();
-    await driver.pause(300);
-
-    if (cats.length > 1) {
-      this.selectedCategories.push(await cats[1].getAttribute('content-desc'));
-      console.log(`[CategoryAndShopsPage] tapping cat[1]: ${this.selectedCategories[1]}`);
-      await cats[1].click();
-      await driver.pause(300);
+    if (cats0.length > 0) {
+      this.selectedCategories.push(await cats0[0].getAttribute('content-desc'));
+      console.log(`[CategoryAndShopsPage] tapping cat[0]: ${this.selectedCategories[0]}`);
+      await cats0[0].click();
+      await driver.pause(500);
     }
 
-    // ── 4: scroll all the way down to reveal the stores section ──────────────
+    if (cats0.length > 1) {
+      // Re-fetch after first click in case DOM updated
+      const cats1 = await $$(this._chipXpath);
+      this.selectedCategories.push(await cats1[1].getAttribute('content-desc'));
+      console.log(`[CategoryAndShopsPage] tapping cat[1]: ${this.selectedCategories[1]}`);
+      await cats1[1].click();
+      await driver.pause(500);
+    }
+
+    // ── 3: scroll all the way down to reveal the stores section ──────────────
     await driver.pause(1000);
     for (let i = 0; i < 3; i++) {
-      await driver.action('pointer', {
-        type: 'pointer', id: 'finger1',
-        parameters: { pointerType: 'touch' },
-      })
-        .move({ duration: 0, x: 540, y: 1500 })
-        .down({ button: 0 })
-        .move({ duration: 800, x: 540, y: 300 })
-        .up({ button: 0 })
-        .perform();
+      await this.scrollDown();
       await driver.pause(500);
     }
 
@@ -302,6 +318,92 @@ class CategoryAndShopsPage {
       .up({ button: 0 })
       .perform();
     await driver.pause(400);
+  }
+
+  /**
+   * Scrolls up until the "מה מעניין אותך" heading is displayed.
+   * Max 8 attempts.
+   */
+  async scrollToCategoriesSection() {
+    const heading = $('//*[contains(@content-desc, "מה מעניין אותך")]');
+    for (let i = 0; i < 8; i++) {
+      const displayed = await heading.isDisplayed().catch(() => false);
+      if (displayed) return;
+      await this.scrollUp();
+    }
+    await heading.waitForDisplayed({ timeout: 3000 });
+  }
+
+  /**
+   * Scrolls down until the "ובאילו חנויות?" heading is displayed.
+   * Max 5 attempts.
+   */
+  async scrollToShopsSection() {
+    const shopsHeading = $('//*[contains(@content-desc, "ובאילו חנויות")]');
+    for (let i = 0; i < 5; i++) {
+      const displayed = await shopsHeading.isDisplayed().catch(() => false);
+      if (displayed) return;
+      await this.scrollDown();
+    }
+    await shopsHeading.waitForDisplayed({ timeout: 3000 });
+  }
+
+  /**
+   * Scrolls down through the shops section and returns the total count of
+   * unique shop chips. Uses the mall name from content-desc to reliably
+   * identify shop chips (each shop chip contains the selected mall name).
+   *
+   * @param {string} mallName — the mall name captured during registration
+   */
+  async getShopChips(mallName) {
+    console.log(`[CategoryAndShopsPage] getShopChips called with mallName="${mallName}"`);
+    const seen = new Set();
+    let noNewCount = 0;
+    // Scope to ImageView only — shop chips are ImageViews, category chips are Buttons
+    const xpath = `//android.widget.ImageView[contains(@content-desc, "${mallName}")]`;
+    const noShopsXpath = '//*[contains(@content-desc, "אין חנויות בקטגוריה זו בקניון")]';
+
+    // Allow time for the new category's shops to load before the first check
+    await driver.pause(1500);
+
+    for (let i = 0; i < 20; i++) {
+      // Check for "no shops in this category" message.
+      // Only treat it as genuinely empty if no shop chips exist either
+      // (guards against the brief "no shops" flash during loading transitions).
+      const noShopsEls = await $$(noShopsXpath);
+      if (noShopsEls.length > 0) {
+        const visible = await noShopsEls[0].isDisplayed().catch(() => false);
+        if (visible) {
+          const shopEls = await $$(xpath);
+          if (shopEls.length === 0) return 0; // confirmed empty
+          // shops exist alongside the message — continue counting
+        }
+      }
+
+      const els = await $$(xpath);
+      if (i === 0) console.log(`[CategoryAndShopsPage] round 0: XPath matched ${els.length} elements`);
+      let foundNew = false;
+      for (const el of els) {
+        const desc = await el.getAttribute('content-desc').catch(() => null);
+        if (desc && !seen.has(desc)) {
+          seen.add(desc);
+          foundNew = true;
+          if (i === 0) console.log(`  new chip: "${desc.substring(0, 60)}"`);
+        }
+      }
+
+      if (!foundNew) {
+        noNewCount++;
+        if (noNewCount >= 2) break;
+      } else {
+        noNewCount = 0;
+      }
+
+      await this.scrollDown();
+      await driver.pause(1200); // extra wait for RecyclerView to re-render after scroll
+    }
+
+    return seen.size;
   }
 
   async countStoresForCategory() {
