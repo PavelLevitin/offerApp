@@ -44,6 +44,8 @@ exports.config = {
       outputDir: './reports/videos',
     }]]),
   ],
+  reporterSyncTimeout: 30000,     // max ms to wait for reporters (VideoReporter) to sync before giving up
+  reporterSyncInterval: 500,      // how often to check reporter sync status
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000,
