@@ -1,54 +1,628 @@
-[2026-03-27T15:38:51.805Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-the-Welcome-screen-on-first-launch-0-0--browser--03-27-2026--18-38-51-781.webm
-[2026-03-27T15:38:51.887Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-000600000003/displayed => [displayed]
-[2026-03-27T15:38:52.584Z] - Screenshot (frame: 0)
-[2026-03-27T15:38:52.598Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-000700000003/displayed => [displayed]
-[2026-03-27T15:38:53.087Z] - Screenshot (frame: 1)
-[2026-03-27T15:38:53.091Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-000900000003/displayed => [displayed]
-[2026-03-27T15:38:53.096Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-all-three-region-tabs-0-0--browser--03-27-2026--18-38-53-095.webm
-[2026-03-27T15:38:53.553Z] - Screenshot (frame: 2)
-[2026-03-27T15:38:54.331Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-001a00000003/displayed => [displayed]
-[2026-03-27T15:38:54.802Z] - Screenshot (frame: 0)
-[2026-03-27T15:38:55.693Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-001b00000003/displayed => [displayed]
-[2026-03-27T15:38:56.195Z] - Screenshot (frame: 1)
-[2026-03-27T15:38:56.213Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-001c00000003/displayed => [displayed]
-[2026-03-27T15:38:56.218Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-click-the-sort-by-location-button-0-0--browser--03-27-2026--18-38-56-217.webm
-[2026-03-27T15:38:56.637Z] - Screenshot (frame: 2)
-[2026-03-27T15:38:56.732Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-001800000003/displayed => [displayed]
-[2026-03-27T15:38:57.230Z] - Screenshot (frame: 0)
-[2026-03-27T15:38:57.831Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-001800000003/click => [click]
-[2026-03-27T15:38:58.267Z] - Screenshot (frame: 1)
-[2026-03-27T15:38:58.849Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-at-least-one-mall-in-the-list-0-0--browser--03-27-2026--18-38-58-847.webm
-[2026-03-27T15:38:59.214Z] Add frame for command: /session/:sessionId/actions => [actions]
-[2026-03-27T15:38:59.222Z] Add frame for command: /session/:sessionId/actions => [actions]
-[2026-03-27T15:38:59.540Z] - Screenshot (frame: 0)
-[2026-03-27T15:38:59.815Z] - Screenshot (frame: 1)
-[2026-03-27T15:39:00.358Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-005500000003/displayed => [displayed]
-[2026-03-27T15:39:00.415Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-navigate-to-Home-screen-after-selecting-a-mall-0-0--browser--03-27-2026--18-39-00-414.webm
-[2026-03-27T15:39:00.690Z] - Screenshot (frame: 2)
-[2026-03-27T15:39:00.792Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-005500000003/displayed => [displayed]
-[2026-03-27T15:39:01.167Z] - Screenshot (frame: 0)
-[2026-03-27T15:39:03.954Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-005500000003/displayed => [displayed]
-[2026-03-27T15:39:04.358Z] - Screenshot (frame: 1)
-[2026-03-27T15:39:04.982Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-005500000003/click => [click]
-[2026-03-27T15:39:05.350Z] - Screenshot (frame: 2)
-[2026-03-27T15:39:07.086Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00ba00000003/displayed => [displayed]
-[2026-03-27T15:39:07.963Z] - Screenshot (frame: 3)
-[2026-03-27T15:39:07.994Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00ba00000003/displayed => [displayed]
-[2026-03-27T15:39:07.996Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-the-home-screen-content-0-0--browser--03-27-2026--18-39-07-995.webm
-[2026-03-27T15:39:08.851Z] - Screenshot (frame: 4)
-[2026-03-27T15:39:08.898Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00ba00000003/displayed => [displayed]
-[2026-03-27T15:39:08.912Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-the-bottom-navigation-bar-0-0--browser--03-27-2026--18-39-08-901.webm
-[2026-03-27T15:39:09.759Z] - Screenshot (frame: 0)
-[2026-03-27T15:39:10.109Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00bd00000003/displayed => [displayed]
-[2026-03-27T15:39:11.028Z] - Screenshot (frame: 0)
-[2026-03-27T15:39:11.579Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00be00000003/displayed => [displayed]
-[2026-03-27T15:39:12.478Z] - Screenshot (frame: 1)
-[2026-03-27T15:39:12.485Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00bf00000003/displayed => [displayed]
-[2026-03-27T15:39:13.416Z] - Screenshot (frame: 2)
-[2026-03-27T15:39:13.419Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00c000000003/displayed => [displayed]
-[2026-03-27T15:39:13.423Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-display-the-top-bar-with-menu-and-search-0-0--browser--03-27-2026--18-39-13-422.webm
-[2026-03-27T15:39:14.298Z] - Screenshot (frame: 3)
-[2026-03-27T15:39:14.340Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00bc00000003/displayed => [displayed]
-[2026-03-27T15:39:15.226Z] - Screenshot (frame: 0)
-[2026-03-27T15:39:15.228Z] Add frame for command: /session/:sessionId/element/00000000-0000-016e-0000-00ba00000003/displayed => [displayed]
-[2026-03-27T15:39:16.463Z] Generated 0 videos, video report done!
+[2026-04-29T09:55:00.722Z] Adding execution video attachment as C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-show-birthday-anniversary-and-family-members-from-onboarding-0-0--browser--04-29-2026--12-55-00-698.webm
+[2026-04-29T09:55:05.305Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-000600000003/displayed => [displayed]
+[2026-04-29T09:55:06.082Z] - Screenshot (frame: 0)
+[2026-04-29T09:55:06.089Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-001800000003/displayed => [displayed]
+[2026-04-29T09:55:06.594Z] - Screenshot (frame: 1)
+[2026-04-29T09:55:07.361Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-001800000003/click => [click]
+[2026-04-29T09:55:07.781Z] - Screenshot (frame: 2)
+[2026-04-29T09:55:08.879Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:08.882Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:09.162Z] - Screenshot (frame: 3)
+[2026-04-29T09:55:09.435Z] - Screenshot (frame: 4)
+[2026-04-29T09:55:09.511Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-004200000003/displayed => [displayed]
+[2026-04-29T09:55:09.877Z] - Screenshot (frame: 5)
+[2026-04-29T09:55:09.926Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-004200000003/click => [click]
+[2026-04-29T09:55:10.191Z] - Screenshot (frame: 6)
+[2026-04-29T09:55:13.270Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/displayed => [displayed]
+[2026-04-29T09:55:13.756Z] - Screenshot (frame: 7)
+[2026-04-29T09:55:14.914Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/click => [click]
+[2026-04-29T09:55:15.584Z] - Screenshot (frame: 8)
+[2026-04-29T09:55:15.594Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-018700000003/displayed => [displayed]
+[2026-04-29T09:55:16.219Z] - Screenshot (frame: 9)
+[2026-04-29T09:55:17.752Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-018700000003/click => [click]
+[2026-04-29T09:55:18.300Z] - Screenshot (frame: 10)
+[2026-04-29T09:55:18.881Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01a900000003/displayed => [displayed]
+[2026-04-29T09:55:19.481Z] - Screenshot (frame: 11)
+[2026-04-29T09:55:19.524Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01a900000003/click => [click]
+[2026-04-29T09:55:19.996Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:20.537Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:20.545Z] - Screenshot (frame: 12)
+[2026-04-29T09:55:21.077Z] - Screenshot (frame: 13)
+[2026-04-29T09:55:21.121Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:55:21.643Z] - Screenshot (frame: 14)
+[2026-04-29T09:55:21.775Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:22.309Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:55:22.315Z] - Screenshot (frame: 15)
+[2026-04-29T09:55:22.829Z] - Screenshot (frame: 16)
+[2026-04-29T09:55:23.417Z] - Screenshot (frame: 17)
+[2026-04-29T09:55:23.421Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01ab00000003/enabled => [enabled]
+[2026-04-29T09:55:24.045Z] - Screenshot (frame: 18)
+[2026-04-29T09:55:24.064Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01ab00000003/click => [click]
+[2026-04-29T09:55:24.570Z] - Screenshot (frame: 19)
+[2026-04-29T09:55:25.157Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d000000003/displayed => [displayed]
+[2026-04-29T09:55:25.764Z] - Screenshot (frame: 20)
+[2026-04-29T09:55:25.769Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:26.343Z] - Screenshot (frame: 21)
+[2026-04-29T09:55:26.758Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:26.777Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:27.326Z] - Screenshot (frame: 22)
+[2026-04-29T09:55:27.869Z] - Screenshot (frame: 23)
+[2026-04-29T09:55:27.875Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:28.408Z] - Screenshot (frame: 24)
+[2026-04-29T09:55:28.745Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:29.306Z] - Screenshot (frame: 25)
+[2026-04-29T09:55:29.749Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:30.336Z] - Screenshot (frame: 26)
+[2026-04-29T09:55:30.760Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:31.298Z] - Screenshot (frame: 27)
+[2026-04-29T09:55:31.737Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:32.305Z] - Screenshot (frame: 28)
+[2026-04-29T09:55:32.751Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:33.326Z] - Screenshot (frame: 29)
+[2026-04-29T09:55:33.750Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:34.301Z] - Screenshot (frame: 30)
+[2026-04-29T09:55:34.770Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:35.339Z] - Screenshot (frame: 31)
+[2026-04-29T09:55:35.750Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:36.287Z] - Screenshot (frame: 32)
+[2026-04-29T09:55:36.757Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:37.346Z] - Screenshot (frame: 33)
+[2026-04-29T09:55:37.753Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:38.339Z] - Screenshot (frame: 34)
+[2026-04-29T09:55:38.748Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:39.333Z] - Screenshot (frame: 35)
+[2026-04-29T09:55:39.751Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:39.782Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:40.324Z] - Screenshot (frame: 36)
+[2026-04-29T09:55:40.887Z] - Screenshot (frame: 37)
+[2026-04-29T09:55:40.888Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:41.454Z] - Screenshot (frame: 38)
+[2026-04-29T09:55:41.737Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:42.279Z] - Screenshot (frame: 39)
+[2026-04-29T09:55:42.744Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:42.773Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:43.328Z] - Screenshot (frame: 40)
+[2026-04-29T09:55:43.892Z] - Screenshot (frame: 41)
+[2026-04-29T09:55:43.902Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:44.513Z] - Screenshot (frame: 42)
+[2026-04-29T09:55:44.756Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:44.777Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:45.328Z] - Screenshot (frame: 43)
+[2026-04-29T09:55:45.898Z] - Screenshot (frame: 44)
+[2026-04-29T09:55:45.910Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:46.471Z] - Screenshot (frame: 45)
+[2026-04-29T09:55:46.744Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:47.361Z] - Screenshot (frame: 46)
+[2026-04-29T09:55:47.747Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:48.313Z] - Screenshot (frame: 47)
+[2026-04-29T09:55:48.750Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:48.778Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:49.364Z] - Screenshot (frame: 48)
+[2026-04-29T09:55:49.931Z] - Screenshot (frame: 49)
+[2026-04-29T09:55:49.939Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:50.493Z] - Screenshot (frame: 50)
+[2026-04-29T09:55:50.742Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:51.320Z] - Screenshot (frame: 51)
+[2026-04-29T09:55:51.747Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:52.316Z] - Screenshot (frame: 52)
+[2026-04-29T09:55:52.742Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:53.316Z] - Screenshot (frame: 53)
+[2026-04-29T09:55:53.751Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:53.791Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:54.331Z] - Screenshot (frame: 54)
+[2026-04-29T09:55:54.873Z] - Screenshot (frame: 55)
+[2026-04-29T09:55:54.881Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:55.482Z] - Screenshot (frame: 56)
+[2026-04-29T09:55:55.746Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:56.333Z] - Screenshot (frame: 57)
+[2026-04-29T09:55:56.747Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:57.322Z] - Screenshot (frame: 58)
+[2026-04-29T09:55:58.095Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:58.126Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:58.700Z] - Screenshot (frame: 59)
+[2026-04-29T09:55:59.289Z] - Screenshot (frame: 60)
+[2026-04-29T09:55:59.754Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:55:59.785Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:00.358Z] - Screenshot (frame: 61)
+[2026-04-29T09:56:00.909Z] - Screenshot (frame: 62)
+[2026-04-29T09:56:00.921Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:01.504Z] - Screenshot (frame: 63)
+[2026-04-29T09:56:01.744Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:02.312Z] - Screenshot (frame: 64)
+[2026-04-29T09:56:02.742Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:03.301Z] - Screenshot (frame: 65)
+[2026-04-29T09:56:03.752Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:04.350Z] - Screenshot (frame: 66)
+[2026-04-29T09:56:04.761Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:05.343Z] - Screenshot (frame: 67)
+[2026-04-29T09:56:05.743Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:06.327Z] - Screenshot (frame: 68)
+[2026-04-29T09:56:06.747Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:06.785Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:07.366Z] - Screenshot (frame: 69)
+[2026-04-29T09:56:07.938Z] - Screenshot (frame: 70)
+[2026-04-29T09:56:07.958Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:08.516Z] - Screenshot (frame: 71)
+[2026-04-29T09:56:08.756Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:09.342Z] - Screenshot (frame: 72)
+[2026-04-29T09:56:09.772Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d900000003/enabled => [enabled]
+[2026-04-29T09:56:10.366Z] - Screenshot (frame: 73)
+[2026-04-29T09:56:10.429Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01d200000003/click => [click]
+[2026-04-29T09:56:10.466Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:56:11.017Z] - Screenshot (frame: 74)
+[2026-04-29T09:56:11.083Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:11.620Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:11.628Z] - Screenshot (frame: 75)
+[2026-04-29T09:56:12.153Z] - Screenshot (frame: 76)
+[2026-04-29T09:56:12.697Z] - Screenshot (frame: 77)
+[2026-04-29T09:56:12.708Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01db00000003/enabled => [enabled]
+[2026-04-29T09:56:13.317Z] - Screenshot (frame: 78)
+[2026-04-29T09:56:13.407Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-01db00000003/click => [click]
+[2026-04-29T09:56:13.899Z] - Screenshot (frame: 79)
+[2026-04-29T09:56:20.144Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/displayed => [displayed]
+[2026-04-29T09:56:20.898Z] - Screenshot (frame: 80)
+[2026-04-29T09:56:22.045Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/click => [click]
+[2026-04-29T09:56:22.636Z] - Screenshot (frame: 81)
+[2026-04-29T09:56:22.651Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-025200000003/displayed => [displayed]
+[2026-04-29T09:56:23.258Z] - Screenshot (frame: 82)
+[2026-04-29T09:56:24.752Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-025300000003/click => [click]
+[2026-04-29T09:56:25.055Z] - Screenshot (frame: 83)
+[2026-04-29T09:56:25.835Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027500000003/displayed => [displayed]
+[2026-04-29T09:56:26.230Z] - Screenshot (frame: 84)
+[2026-04-29T09:56:26.248Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027900000003/displayed => [displayed]
+[2026-04-29T09:56:26.637Z] - Screenshot (frame: 85)
+[2026-04-29T09:56:28.089Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027900000003/click => [click]
+[2026-04-29T09:56:28.430Z] - Screenshot (frame: 86)
+[2026-04-29T09:56:29.253Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:29.255Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:29.538Z] - Screenshot (frame: 87)
+[2026-04-29T09:56:29.817Z] - Screenshot (frame: 88)
+[2026-04-29T09:56:31.018Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027a00000003/displayed => [displayed]
+[2026-04-29T09:56:31.380Z] - Screenshot (frame: 89)
+[2026-04-29T09:56:31.430Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027a00000003/click => [click]
+[2026-04-29T09:56:31.748Z] - Screenshot (frame: 90)
+[2026-04-29T09:56:33.025Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027900000003/displayed => [displayed]
+[2026-04-29T09:56:33.379Z] - Screenshot (frame: 91)
+[2026-04-29T09:56:33.453Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027900000003/click => [click]
+[2026-04-29T09:56:33.748Z] - Screenshot (frame: 92)
+[2026-04-29T09:56:34.614Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:34.617Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:34.905Z] - Screenshot (frame: 93)
+[2026-04-29T09:56:35.180Z] - Screenshot (frame: 94)
+[2026-04-29T09:56:36.378Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027a00000003/displayed => [displayed]
+[2026-04-29T09:56:36.751Z] - Screenshot (frame: 95)
+[2026-04-29T09:56:38.078Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-027a00000003/click => [click]
+[2026-04-29T09:56:38.380Z] - Screenshot (frame: 96)
+[2026-04-29T09:56:39.658Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-033c00000003/displayed => [displayed]
+[2026-04-29T09:56:40.026Z] - Screenshot (frame: 97)
+[2026-04-29T09:56:40.088Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-033c00000003/click => [click]
+[2026-04-29T09:56:40.412Z] - Screenshot (frame: 98)
+[2026-04-29T09:56:41.665Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-034000000003/displayed => [displayed]
+[2026-04-29T09:56:42.123Z] - Screenshot (frame: 99)
+[2026-04-29T09:56:42.134Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-034300000003/displayed => [displayed]
+[2026-04-29T09:56:42.623Z] - Screenshot (frame: 100)
+[2026-04-29T09:56:43.149Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-034300000003/click => [click]
+[2026-04-29T09:56:43.609Z] - Screenshot (frame: 101)
+[2026-04-29T09:56:47.341Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-035d00000003/displayed => [displayed]
+[2026-04-29T09:56:47.708Z] - Screenshot (frame: 102)
+[2026-04-29T09:56:47.730Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-036000000003/displayed => [displayed]
+[2026-04-29T09:56:48.110Z] - Screenshot (frame: 103)
+[2026-04-29T09:56:48.188Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-036000000003/click => [click]
+[2026-04-29T09:56:48.545Z] - Screenshot (frame: 104)
+[2026-04-29T09:56:50.248Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/displayed => [displayed]
+[2026-04-29T09:56:51.057Z] - Screenshot (frame: 105)
+[2026-04-29T09:56:53.187Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/click => [click]
+[2026-04-29T09:56:53.809Z] - Screenshot (frame: 106)
+[2026-04-29T09:56:53.814Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-038600000003/displayed => [displayed]
+[2026-04-29T09:56:54.443Z] - Screenshot (frame: 107)
+[2026-04-29T09:56:55.885Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-038600000003/click => [click]
+[2026-04-29T09:56:56.414Z] - Screenshot (frame: 108)
+[2026-04-29T09:56:56.967Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03a800000003/displayed => [displayed]
+[2026-04-29T09:56:57.582Z] - Screenshot (frame: 109)
+[2026-04-29T09:56:57.652Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03a800000003/click => [click]
+[2026-04-29T09:56:58.078Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:58.593Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:56:58.596Z] - Screenshot (frame: 110)
+[2026-04-29T09:56:59.079Z] - Screenshot (frame: 111)
+[2026-04-29T09:56:59.100Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:56:59.683Z] - Screenshot (frame: 112)
+[2026-04-29T09:56:59.717Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:00.278Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:00.281Z] - Screenshot (frame: 113)
+[2026-04-29T09:57:00.783Z] - Screenshot (frame: 114)
+[2026-04-29T09:57:01.368Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03aa00000003/enabled => [enabled]
+[2026-04-29T09:57:01.373Z] - Screenshot (frame: 115)
+[2026-04-29T09:57:01.985Z] - Screenshot (frame: 116)
+[2026-04-29T09:57:02.045Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03aa00000003/click => [click]
+[2026-04-29T09:57:02.606Z] - Screenshot (frame: 117)
+[2026-04-29T09:57:03.325Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03cf00000003/displayed => [displayed]
+[2026-04-29T09:57:03.948Z] - Screenshot (frame: 118)
+[2026-04-29T09:57:04.130Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:04.694Z] - Screenshot (frame: 119)
+[2026-04-29T09:57:05.127Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:05.658Z] - Screenshot (frame: 120)
+[2026-04-29T09:57:06.143Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:06.699Z] - Screenshot (frame: 121)
+[2026-04-29T09:57:07.138Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:07.694Z] - Screenshot (frame: 122)
+[2026-04-29T09:57:08.130Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:08.661Z] - Screenshot (frame: 123)
+[2026-04-29T09:57:09.347Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:09.893Z] - Screenshot (frame: 124)
+[2026-04-29T09:57:10.132Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:10.157Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:10.668Z] - Screenshot (frame: 125)
+[2026-04-29T09:57:11.194Z] - Screenshot (frame: 126)
+[2026-04-29T09:57:11.203Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:11.758Z] - Screenshot (frame: 127)
+[2026-04-29T09:57:12.146Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:12.692Z] - Screenshot (frame: 128)
+[2026-04-29T09:57:13.146Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:13.709Z] - Screenshot (frame: 129)
+[2026-04-29T09:57:14.138Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:14.706Z] - Screenshot (frame: 130)
+[2026-04-29T09:57:15.147Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:15.699Z] - Screenshot (frame: 131)
+[2026-04-29T09:57:16.147Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:16.167Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:16.781Z] - Screenshot (frame: 132)
+[2026-04-29T09:57:17.363Z] - Screenshot (frame: 133)
+[2026-04-29T09:57:17.366Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:17.388Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:17.976Z] - Screenshot (frame: 134)
+[2026-04-29T09:57:18.559Z] - Screenshot (frame: 135)
+[2026-04-29T09:57:18.570Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:18.598Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:19.143Z] - Screenshot (frame: 136)
+[2026-04-29T09:57:19.700Z] - Screenshot (frame: 137)
+[2026-04-29T09:57:20.126Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:20.708Z] - Screenshot (frame: 138)
+[2026-04-29T09:57:21.142Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:21.741Z] - Screenshot (frame: 139)
+[2026-04-29T09:57:22.149Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:22.721Z] - Screenshot (frame: 140)
+[2026-04-29T09:57:23.151Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:23.179Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:23.732Z] - Screenshot (frame: 141)
+[2026-04-29T09:57:24.282Z] - Screenshot (frame: 142)
+[2026-04-29T09:57:24.295Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:24.871Z] - Screenshot (frame: 143)
+[2026-04-29T09:57:25.129Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:25.725Z] - Screenshot (frame: 144)
+[2026-04-29T09:57:26.143Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:26.193Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:26.739Z] - Screenshot (frame: 145)
+[2026-04-29T09:57:27.136Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:27.720Z] - Screenshot (frame: 146)
+[2026-04-29T09:57:28.285Z] - Screenshot (frame: 147)
+[2026-04-29T09:57:28.289Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:28.843Z] - Screenshot (frame: 148)
+[2026-04-29T09:57:29.139Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:29.750Z] - Screenshot (frame: 149)
+[2026-04-29T09:57:30.150Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:30.171Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:30.728Z] - Screenshot (frame: 150)
+[2026-04-29T09:57:31.284Z] - Screenshot (frame: 151)
+[2026-04-29T09:57:31.288Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:31.843Z] - Screenshot (frame: 152)
+[2026-04-29T09:57:32.136Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:32.706Z] - Screenshot (frame: 153)
+[2026-04-29T09:57:33.145Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:33.174Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:33.738Z] - Screenshot (frame: 154)
+[2026-04-29T09:57:34.303Z] - Screenshot (frame: 155)
+[2026-04-29T09:57:34.306Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:34.338Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:34.919Z] - Screenshot (frame: 156)
+[2026-04-29T09:57:35.146Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:35.725Z] - Screenshot (frame: 157)
+[2026-04-29T09:57:36.262Z] - Screenshot (frame: 158)
+[2026-04-29T09:57:36.263Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:36.822Z] - Screenshot (frame: 159)
+[2026-04-29T09:57:37.134Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:37.710Z] - Screenshot (frame: 160)
+[2026-04-29T09:57:38.142Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:38.170Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:38.749Z] - Screenshot (frame: 161)
+[2026-04-29T09:57:39.324Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:39.330Z] - Screenshot (frame: 162)
+[2026-04-29T09:57:39.345Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:39.915Z] - Screenshot (frame: 163)
+[2026-04-29T09:57:40.476Z] - Screenshot (frame: 164)
+[2026-04-29T09:57:40.480Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:41.031Z] - Screenshot (frame: 165)
+[2026-04-29T09:57:41.132Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:41.702Z] - Screenshot (frame: 166)
+[2026-04-29T09:57:42.140Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:42.713Z] - Screenshot (frame: 167)
+[2026-04-29T09:57:43.145Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:43.737Z] - Screenshot (frame: 168)
+[2026-04-29T09:57:44.142Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:44.176Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:44.760Z] - Screenshot (frame: 169)
+[2026-04-29T09:57:45.324Z] - Screenshot (frame: 170)
+[2026-04-29T09:57:45.326Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:45.882Z] - Screenshot (frame: 171)
+[2026-04-29T09:57:46.147Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:46.724Z] - Screenshot (frame: 172)
+[2026-04-29T09:57:47.134Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:47.697Z] - Screenshot (frame: 173)
+[2026-04-29T09:57:48.153Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d800000003/enabled => [enabled]
+[2026-04-29T09:57:48.781Z] - Screenshot (frame: 174)
+[2026-04-29T09:57:48.857Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03d100000003/click => [click]
+[2026-04-29T09:57:48.889Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:57:49.414Z] - Screenshot (frame: 175)
+[2026-04-29T09:57:49.520Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:50.037Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:50.042Z] - Screenshot (frame: 176)
+[2026-04-29T09:57:50.607Z] - Screenshot (frame: 177)
+[2026-04-29T09:57:51.165Z] - Screenshot (frame: 178)
+[2026-04-29T09:57:51.181Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03da00000003/enabled => [enabled]
+[2026-04-29T09:57:51.775Z] - Screenshot (frame: 179)
+[2026-04-29T09:57:51.832Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03da00000003/click => [click]
+[2026-04-29T09:57:52.334Z] - Screenshot (frame: 180)
+[2026-04-29T09:57:53.004Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03df00000003/displayed => [displayed]
+[2026-04-29T09:57:53.612Z] - Screenshot (frame: 181)
+[2026-04-29T09:57:53.657Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03df00000003/click => [click]
+[2026-04-29T09:57:54.188Z] - Screenshot (frame: 182)
+[2026-04-29T09:57:54.193Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:57:54.782Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:55.329Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:55.334Z] - Screenshot (frame: 183)
+[2026-04-29T09:57:55.901Z] - Screenshot (frame: 184)
+[2026-04-29T09:57:56.523Z] - Screenshot (frame: 185)
+[2026-04-29T09:57:56.566Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e200000003/click => [click]
+[2026-04-29T09:57:57.079Z] - Screenshot (frame: 186)
+[2026-04-29T09:57:57.096Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:57:57.690Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:58.240Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:58.247Z] - Screenshot (frame: 187)
+[2026-04-29T09:57:58.763Z] - Screenshot (frame: 188)
+[2026-04-29T09:57:59.099Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:59.627Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:57:59.631Z] - Screenshot (frame: 189)
+[2026-04-29T09:58:00.159Z] - Screenshot (frame: 190)
+[2026-04-29T09:58:00.719Z] - Screenshot (frame: 191)
+[2026-04-29T09:58:00.832Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e600000003/click => [click]
+[2026-04-29T09:58:01.320Z] - Screenshot (frame: 192)
+[2026-04-29T09:58:01.337Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:01.938Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:02.467Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:02.473Z] - Screenshot (frame: 193)
+[2026-04-29T09:58:03.012Z] - Screenshot (frame: 194)
+[2026-04-29T09:58:06.384Z] - Screenshot (frame: 195)
+[2026-04-29T09:58:06.466Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e500000003/displayed => [displayed]
+[2026-04-29T09:58:07.095Z] - Screenshot (frame: 196)
+[2026-04-29T09:58:07.128Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e500000003/click => [click]
+[2026-04-29T09:58:07.661Z] - Screenshot (frame: 197)
+[2026-04-29T09:58:07.914Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-049900000003/displayed => [displayed]
+[2026-04-29T09:58:08.778Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-049900000003/click => [click]
+[2026-04-29T09:58:09.360Z] - Screenshot (frame: 198)
+[2026-04-29T09:58:09.901Z] - Screenshot (frame: 199)
+[2026-04-29T09:58:10.529Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:10.533Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:11.044Z] - Screenshot (frame: 200)
+[2026-04-29T09:58:11.599Z] - Screenshot (frame: 201)
+[2026-04-29T09:58:11.673Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e900000003/displayed => [displayed]
+[2026-04-29T09:58:12.339Z] - Screenshot (frame: 202)
+[2026-04-29T09:58:13.222Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03e900000003/click => [click]
+[2026-04-29T09:58:13.655Z] - Screenshot (frame: 203)
+[2026-04-29T09:58:13.668Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-049d00000003/displayed => [displayed]
+[2026-04-29T09:58:14.064Z] - Screenshot (frame: 204)
+[2026-04-29T09:58:16.654Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-049d00000003/click => [click]
+[2026-04-29T09:58:17.249Z] - Screenshot (frame: 205)
+[2026-04-29T09:58:17.724Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:18.309Z] - Screenshot (frame: 206)
+[2026-04-29T09:58:18.323Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03f000000003/displayed => [displayed]
+[2026-04-29T09:58:18.903Z] - Screenshot (frame: 207)
+[2026-04-29T09:58:19.648Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03f000000003/click => [click]
+[2026-04-29T09:58:20.347Z] - Screenshot (frame: 208)
+[2026-04-29T09:58:20.460Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-03f400000003/click => [click]
+[2026-04-29T09:58:21.011Z] - Screenshot (frame: 209)
+[2026-04-29T09:58:21.518Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04c700000003/displayed => [displayed]
+[2026-04-29T09:58:22.118Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04b500000003/displayed => [displayed]
+[2026-04-29T09:58:22.121Z] - Screenshot (frame: 210)
+[2026-04-29T09:58:22.726Z] - Screenshot (frame: 211)
+[2026-04-29T09:58:22.939Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:23.329Z] - Screenshot (frame: 212)
+[2026-04-29T09:58:23.582Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04fc00000003/click => [click]
+[2026-04-29T09:58:23.933Z] - Screenshot (frame: 213)
+[2026-04-29T09:58:41.235Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-05b900000003/click => [click]
+[2026-04-29T09:58:41.615Z] - Screenshot (frame: 214)
+[2026-04-29T09:58:41.864Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04fe00000003/click => [click]
+[2026-04-29T09:58:42.340Z] - Screenshot (frame: 215)
+[2026-04-29T09:58:42.578Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04b900000003/displayed => [displayed]
+[2026-04-29T09:58:43.223Z] - Screenshot (frame: 216)
+[2026-04-29T09:58:43.399Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:43.846Z] - Screenshot (frame: 217)
+[2026-04-29T09:58:45.280Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-063300000003/click => [click]
+[2026-04-29T09:58:45.686Z] - Screenshot (frame: 218)
+[2026-04-29T09:58:46.289Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-064b00000003/click => [click]
+[2026-04-29T09:58:46.690Z] - Screenshot (frame: 219)
+[2026-04-29T09:58:47.548Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-063500000003/click => [click]
+[2026-04-29T09:58:48.112Z] - Screenshot (frame: 220)
+[2026-04-29T09:58:48.257Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04bf00000003/click => [click]
+[2026-04-29T09:58:48.792Z] - Screenshot (frame: 221)
+[2026-04-29T09:58:49.126Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:49.132Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:49.670Z] - Screenshot (frame: 222)
+[2026-04-29T09:58:50.190Z] - Screenshot (frame: 223)
+[2026-04-29T09:58:50.208Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:50.795Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:51.318Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:51.325Z] - Screenshot (frame: 224)
+[2026-04-29T09:58:51.879Z] - Screenshot (frame: 225)
+[2026-04-29T09:58:54.571Z] - Screenshot (frame: 226)
+[2026-04-29T09:58:54.897Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:54.906Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:58:55.416Z] - Screenshot (frame: 227)
+[2026-04-29T09:58:55.924Z] - Screenshot (frame: 228)
+[2026-04-29T09:58:56.081Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:58:56.505Z] - Screenshot (frame: 229)
+[2026-04-29T09:58:56.730Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-072b00000003/click => [click]
+[2026-04-29T09:58:57.131Z] - Screenshot (frame: 230)
+[2026-04-29T09:59:13.035Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-07de00000003/click => [click]
+[2026-04-29T09:59:13.402Z] - Screenshot (frame: 231)
+[2026-04-29T09:59:13.682Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-072d00000003/click => [click]
+[2026-04-29T09:59:14.157Z] - Screenshot (frame: 232)
+[2026-04-29T09:59:14.524Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:14.527Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:15.043Z] - Screenshot (frame: 233)
+[2026-04-29T09:59:15.529Z] - Screenshot (frame: 234)
+[2026-04-29T09:59:15.573Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-081e00000003/displayed => [displayed]
+[2026-04-29T09:59:16.188Z] - Screenshot (frame: 235)
+[2026-04-29T09:59:16.766Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-081e00000003/click => [click]
+[2026-04-29T09:59:17.350Z] - Screenshot (frame: 236)
+[2026-04-29T09:59:18.524Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-082000000003/click => [click]
+[2026-04-29T09:59:19.114Z] - Screenshot (frame: 237)
+[2026-04-29T09:59:19.443Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:19.446Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:19.971Z] - Screenshot (frame: 238)
+[2026-04-29T09:59:20.485Z] - Screenshot (frame: 239)
+[2026-04-29T09:59:20.500Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:59:21.106Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:21.701Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:21.714Z] - Screenshot (frame: 240)
+[2026-04-29T09:59:22.309Z] - Screenshot (frame: 241)
+[2026-04-29T09:59:24.978Z] - Screenshot (frame: 242)
+[2026-04-29T09:59:25.308Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:25.315Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:25.830Z] - Screenshot (frame: 243)
+[2026-04-29T09:59:26.339Z] - Screenshot (frame: 244)
+[2026-04-29T09:59:26.520Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:59:26.972Z] - Screenshot (frame: 245)
+[2026-04-29T09:59:27.242Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-08eb00000003/click => [click]
+[2026-04-29T09:59:27.638Z] - Screenshot (frame: 246)
+[2026-04-29T09:59:44.997Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-09b200000003/click => [click]
+[2026-04-29T09:59:45.378Z] - Screenshot (frame: 247)
+[2026-04-29T09:59:45.608Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-08ed00000003/click => [click]
+[2026-04-29T09:59:46.129Z] - Screenshot (frame: 248)
+[2026-04-29T09:59:46.474Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:46.482Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:47.037Z] - Screenshot (frame: 249)
+[2026-04-29T09:59:47.506Z] - Screenshot (frame: 250)
+[2026-04-29T09:59:47.534Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-09f700000003/displayed => [displayed]
+[2026-04-29T09:59:48.080Z] - Screenshot (frame: 251)
+[2026-04-29T09:59:48.127Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-09f700000003/click => [click]
+[2026-04-29T09:59:48.701Z] - Screenshot (frame: 252)
+[2026-04-29T09:59:48.872Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-09f900000003/click => [click]
+[2026-04-29T09:59:49.400Z] - Screenshot (frame: 253)
+[2026-04-29T09:59:49.743Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:49.752Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:50.271Z] - Screenshot (frame: 254)
+[2026-04-29T09:59:50.777Z] - Screenshot (frame: 255)
+[2026-04-29T09:59:50.785Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:59:51.382Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:51.960Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:51.965Z] - Screenshot (frame: 256)
+[2026-04-29T09:59:52.511Z] - Screenshot (frame: 257)
+[2026-04-29T09:59:55.192Z] - Screenshot (frame: 258)
+[2026-04-29T09:59:55.523Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:55.528Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T09:59:56.064Z] - Screenshot (frame: 259)
+[2026-04-29T09:59:56.551Z] - Screenshot (frame: 260)
+[2026-04-29T09:59:56.666Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T09:59:57.118Z] - Screenshot (frame: 261)
+[2026-04-29T09:59:58.572Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0ac400000003/click => [click]
+[2026-04-29T09:59:59.013Z] - Screenshot (frame: 262)
+[2026-04-29T10:00:16.784Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0b8600000003/click => [click]
+[2026-04-29T10:00:17.185Z] - Screenshot (frame: 263)
+[2026-04-29T10:00:18.046Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0ac600000003/click => [click]
+[2026-04-29T10:00:18.566Z] - Screenshot (frame: 264)
+[2026-04-29T10:00:18.910Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:18.916Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:19.432Z] - Screenshot (frame: 265)
+[2026-04-29T10:00:19.951Z] - Screenshot (frame: 266)
+[2026-04-29T10:00:19.980Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0bd000000003/displayed => [displayed]
+[2026-04-29T10:00:20.530Z] - Screenshot (frame: 267)
+[2026-04-29T10:00:21.102Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0bd000000003/click => [click]
+[2026-04-29T10:00:21.652Z] - Screenshot (frame: 268)
+[2026-04-29T10:00:22.871Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0bd200000003/click => [click]
+[2026-04-29T10:00:23.423Z] - Screenshot (frame: 269)
+[2026-04-29T10:00:23.751Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:23.753Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:24.285Z] - Screenshot (frame: 270)
+[2026-04-29T10:00:24.816Z] - Screenshot (frame: 271)
+[2026-04-29T10:00:24.834Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T10:00:25.433Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:26.027Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:26.030Z] - Screenshot (frame: 272)
+[2026-04-29T10:00:26.628Z] - Screenshot (frame: 273)
+[2026-04-29T10:00:29.318Z] - Screenshot (frame: 274)
+[2026-04-29T10:00:29.636Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:29.638Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:30.189Z] - Screenshot (frame: 275)
+[2026-04-29T10:00:30.717Z] - Screenshot (frame: 276)
+[2026-04-29T10:00:30.903Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-04-29T10:00:31.351Z] - Screenshot (frame: 277)
+[2026-04-29T10:00:31.617Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0c8d00000003/click => [click]
+[2026-04-29T10:00:32.065Z] - Screenshot (frame: 278)
+[2026-04-29T10:00:33.548Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0c9700000003/click => [click]
+[2026-04-29T10:00:33.931Z] - Screenshot (frame: 279)
+[2026-04-29T10:00:34.686Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0c8f00000003/click => [click]
+[2026-04-29T10:00:35.287Z] - Screenshot (frame: 280)
+[2026-04-29T10:00:35.941Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04c500000003/click => [click]
+[2026-04-29T10:00:36.546Z] - Screenshot (frame: 281)
+[2026-04-29T10:00:37.440Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-04c700000003/click => [click]
+[2026-04-29T10:00:38.041Z] - Screenshot (frame: 282)
+[2026-04-29T10:00:38.515Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0ce700000003/displayed => [displayed]
+[2026-04-29T10:00:39.190Z] - Screenshot (frame: 283)
+[2026-04-29T10:00:39.195Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0ce700000003/displayed => [displayed]
+[2026-04-29T10:00:39.819Z] - Screenshot (frame: 284)
+[2026-04-29T10:00:40.464Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0ced00000003/click => [click]
+[2026-04-29T10:00:41.060Z] - Screenshot (frame: 285)
+[2026-04-29T10:00:41.560Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0cec00000003/click => [click]
+[2026-04-29T10:00:42.158Z] - Screenshot (frame: 286)
+[2026-04-29T10:00:43.626Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:43.631Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:44.178Z] - Screenshot (frame: 287)
+[2026-04-29T10:00:44.739Z] - Screenshot (frame: 288)
+[2026-04-29T10:00:45.267Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:45.269Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:45.897Z] - Screenshot (frame: 289)
+[2026-04-29T10:00:46.548Z] - Screenshot (frame: 290)
+[2026-04-29T10:00:47.057Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:47.065Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:00:47.697Z] - Screenshot (frame: 291)
+[2026-04-29T10:00:48.318Z] - Screenshot (frame: 292)
+[2026-04-29T10:00:48.413Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d0600000003/click => [click]
+[2026-04-29T10:00:49.075Z] - Screenshot (frame: 293)
+[2026-04-29T10:00:49.638Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d0700000003/click => [click]
+[2026-04-29T10:00:50.301Z] - Screenshot (frame: 294)
+[2026-04-29T10:00:50.327Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0cea00000003/displayed => [displayed]
+[2026-04-29T10:00:51.047Z] - Screenshot (frame: 295)
+[2026-04-29T10:00:51.075Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0cea00000003/click => [click]
+[2026-04-29T10:00:51.699Z] - Screenshot (frame: 296)
+[2026-04-29T10:00:58.361Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/displayed => [displayed]
+[2026-04-29T10:00:58.871Z] - Screenshot (frame: 297)
+[2026-04-29T10:00:59.008Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-00ad00000003/click => [click]
+[2026-04-29T10:01:00.594Z] - Screenshot (frame: 298)
+[2026-04-29T10:01:00.602Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d6300000003/displayed => [displayed]
+[2026-04-29T10:01:01.225Z] - Screenshot (frame: 299)
+[2026-04-29T10:01:02.537Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d6400000003/click => [click]
+[2026-04-29T10:01:02.851Z] - Screenshot (frame: 300)
+[2026-04-29T10:01:03.660Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d8200000003/displayed => [displayed]
+[2026-04-29T10:01:04.036Z] - Screenshot (frame: 301)
+[2026-04-29T10:01:04.101Z] Add frame for command: /session/:sessionId/element/00000000-0000-000e-0000-0d8600000003/click => [click]
+[2026-04-29T10:01:04.406Z] - Screenshot (frame: 302)
+[2026-04-29T10:01:06.284Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:06.287Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:06.580Z] - Screenshot (frame: 303)
+[2026-04-29T10:01:06.862Z] - Screenshot (frame: 304)
+[2026-04-29T10:01:07.393Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:07.395Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:07.680Z] - Screenshot (frame: 305)
+[2026-04-29T10:01:07.967Z] - Screenshot (frame: 306)
+[2026-04-29T10:01:08.850Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:08.852Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:09.138Z] - Screenshot (frame: 307)
+[2026-04-29T10:01:09.423Z] - Screenshot (frame: 308)
+[2026-04-29T10:01:09.954Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:09.957Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-04-29T10:01:10.248Z] - Screenshot (frame: 309)
+[2026-04-29T10:01:10.523Z] - Screenshot (frame: 310)
+[2026-04-29T10:01:11.425Z] ffmpeg command: "C:\Users\pavel\clauld_code\ofer_apk\node_modules\@ffmpeg-installer\win32-x64\ffmpeg.exe" -y -r 10 -i "C:\Users\pavel\clauld_code\ofer_apk\reports\videos\.video-reporter-screenshots\should-show-birthday-anniversary-and-family-members-from-onboarding-0-0--browser--04-29-2026--12-55-00-698/%04d.png" -vcodec libvpx-vp9 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=3.0*PTS" "C:\Users\pavel\clauld_code\ofer_apk\reports\videos\should-show-birthday-anniversary-and-family-members-from-onboarding-0-0--browser--04-29-2026--12-55-00-698.webm"
+[2026-04-29T10:01:13.847Z] Screenshot not available (frame: 312). Error: Error: WebDriverError: Request failed with error code UND_ERR_CLOSED when running "screenshot" with method "GET"..
+[2026-04-29T10:01:13.850Z] Screenshot not available (frame: 311). Error: Error: WebDriverError: Request failed with error code UND_ERR_CLOSED when running "screenshot" with method "GET"..
+[2026-04-29T10:01:17.407Z] videoRenderTimeout triggered before ffmpeg had a chance to wrap up
+[2026-04-29T10:01:17.407Z] Generated 1 videos, video report done!
