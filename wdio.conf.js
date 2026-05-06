@@ -54,8 +54,8 @@ exports.config = {
   capabilities: [
     {
       platformName: 'Android',
-      'appium:deviceName': 'Samsung S22',
-      'appium:udid': 'R5CTA20GX1M',
+      'appium:deviceName': 'Samsung A54',
+      'appium:udid': 'R5CW710AMST',
       'appium:app': path.resolve(__dirname, './app-stage-release.apk'),
       'appium:automationName': 'UiAutomator2',
       'appium:appWaitForLaunch': true,
@@ -79,7 +79,7 @@ exports.config = {
    */
   before: async function () {
     const { execSync } = require('child_process');
-    const deviceId = 'R5CTA20GX1M';
+    const deviceId = 'R5CW710AMST';
     const pkg      = 'com.ofermalls.myofer.stage';
     const perms    = [
       'android.permission.ACCESS_FINE_LOCATION',

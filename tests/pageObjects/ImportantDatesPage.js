@@ -138,26 +138,30 @@ class ImportantDatesPage {
   }
 
   async scrollUp() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 500 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.25) })
       .down({ button: 0 })
-      .move({ duration: 300, x: 540, y: 1400 })
+      .move({ duration: 300, x: cx, y: Math.round(height * 0.75) })
       .up({ button: 0 })
       .perform();
     await driver.pause(300);
   }
 
   async scrollDown() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 1400 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.75) })
       .down({ button: 0 })
-      .move({ duration: 300, x: 540, y: 500 })
+      .move({ duration: 300, x: cx, y: Math.round(height * 0.25) })
       .up({ button: 0 })
       .perform();
     await driver.pause(300);
