@@ -44,14 +44,14 @@ class WelcomePage {
    * Mall items have their status ("פתוח" = open, "סגור" = closed) in content-desc.
    */
   get firstMallItem() {
-    return $('(//*[contains(@content-desc, "פתוח") and @clickable="true"])[1]');
+    return $('(//*[(contains(@content-desc, "פתוח") or contains(@content-desc, "סגור")) and @clickable="true"])[1]');
   }
 
   /**
    * All visible mall items in the list.
    */
   get mallItems() {
-    return $$('//*[contains(@content-desc, "פתוח") and @clickable="true"]');
+    return $$('//*[(contains(@content-desc, "פתוח") or contains(@content-desc, "סגור")) and @clickable="true"]');
   }
 
   // ── Actions ────────────────────────────────────────────────────────────────
