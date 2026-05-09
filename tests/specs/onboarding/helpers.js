@@ -11,7 +11,7 @@ const DeleteAccountPage    = require('../../pageObjects/DeleteAccountPage');
 const testData             = require('../../data/testData');
 const sessionData          = require('../../data/sessionData');
 const { faker }            = require('@faker-js/faker');
-const { clearField, typeText } = require('../../helpers/typeText');
+const { clearField, typeText, scrollDown } = require('../../helpers/typeText');
 
 async function goToWelcomeScreen() {
   await driver.pause(3000);
@@ -24,11 +24,24 @@ async function goThroughMallSelection() {
   await HomePage.waitForScreen();
 }
 
+async function dismissLocationDialogIfPresent() {
+  try {
+    const dialogTitle = await $('~אפשר לקניוני עופר גישה למיקום המכשיר');
+    const isVisible = await dialogTitle.isDisplayed().catch(() => false);
+    if (isVisible) {
+      const cancelBtn = await $('~ביטול');
+      await cancelBtn.click();
+      await driver.pause(500);
+    }
+  } catch (_) {}
+}
+
 async function navigateToPhoneEntry() {
   await HomePage.menuButton.click();
   await MenuPage.waitForScreen();
   await MenuPage.tapLoginOrRegister();
   await PhoneEntryPage.waitForScreen();
+  await dismissLocationDialogIfPresent();
 }
 
 async function submitPhone() {
@@ -69,19 +82,19 @@ async function waitAndEnterOTP() {
 }
 
 async function completeRegistrationFormHappyPath() {
+  await scrollDown();
+  sessionData.firstName = testData.registration.firstName;
+  sessionData.lastName  = testData.registration.lastName;
+  sessionData.email     = testData.registration.email;
+  sessionData.gender    = 'אחר';
   await RegistrationPage1.fillFirstName(testData.registration.firstName, false, false);
   await RegistrationPage1.fillLastName(testData.registration.lastName, false);
-  await RegistrationPage1.fillEmail(testData.registration.email, true, false);
-  try { await driver.hideKeyboard(); } catch (_) {}
+  await RegistrationPage1.fillEmail(testData.registration.email, false, false);
   await RegistrationPage1.selectGender('אחר');
   await RegistrationPage1.selectFirstMall();
   sessionData.mallName = RegistrationPage1.selectedMallName;
   await RegistrationPage1.toggleTerms();
   await RegistrationPage1.tapContinue();
-  sessionData.firstName = testData.registration.firstName;
-  sessionData.lastName  = testData.registration.lastName;
-  sessionData.email     = testData.registration.email;
-  sessionData.gender    = 'אחר';
   await ImportantDatesPage.waitForScreen();
 }
 
@@ -229,6 +242,7 @@ module.exports = {
   goToWelcomeScreen,
   goThroughMallSelection,
   navigateToPhoneEntry,
+  dismissLocationDialogIfPresent,
   submitPhone,
   waitAndEnterOTP,
   completeRegistrationFormHappyPath,

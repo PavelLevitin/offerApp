@@ -9,8 +9,6 @@ const {
   submitPhone,
   waitAndEnterOTP,
   completeRegistrationFormHappyPath,
-  completeCategoriesHappyPath,
-  deleteAccount,
 } = require('./helpers');
 
 describe('Fresh Onboarding — Step 8: Important dates', () => {
@@ -61,6 +59,8 @@ describe('Fresh Onboarding — Step 8: Important dates', () => {
   });
 
   it('should allow adding up to 4 family members', async () => {
+    await $(`-android uiautomator:new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("add_family_member_button"))`);
+    await driver.pause(500);
     for (let i = 0; i < 4; i++) {
       if (i > 0) await ImportantDatesPage.tapAddMember();
       const name = faker.person.firstName();
@@ -80,7 +80,7 @@ describe('Fresh Onboarding — Step 8: Important dates', () => {
     expect(remainingButtons.length).toBe(3);
 
     await ImportantDatesPage.tapContinue();
-    await completeCategoriesHappyPath();
-    await deleteAccount();
+    const CategoryAndShopsPage = require('../../pageObjects/CategoryAndShopsPage');
+    await CategoryAndShopsPage.waitForScreen();
   });
 });
