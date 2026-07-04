@@ -26,7 +26,7 @@
  *   - Date picker: tap field (clickGesture) → tap "Select year" → UiScrollable to year → tap OK
  *   - Wedding anniversary, family member fields are all optional
  */
-const { typeText } = require('../helpers/typeText');
+const { typeText, scrollDown } = require('../helpers/typeText');
 const { faker }    = require('@faker-js/faker');
 
 class ImportantDatesPage {
@@ -138,26 +138,30 @@ class ImportantDatesPage {
   }
 
   async scrollUp() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 500 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.25) })
       .down({ button: 0 })
-      .move({ duration: 300, x: 540, y: 1400 })
+      .move({ duration: 300, x: cx, y: Math.round(height * 0.75) })
       .up({ button: 0 })
       .perform();
     await driver.pause(300);
   }
 
   async scrollDown() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 1400 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.75) })
       .down({ button: 0 })
-      .move({ duration: 300, x: 540, y: 500 })
+      .move({ duration: 300, x: cx, y: Math.round(height * 0.25) })
       .up({ button: 0 })
       .perform();
     await driver.pause(300);
@@ -169,26 +173,32 @@ class ImportantDatesPage {
    * Year must be <= current year - 5 (e.g. 2020).
    */
   async fillFamilyMember(name, year) {
-    // Click the last clickable שם מלא inner input
+    // Fill the last שם מלא inner input using replaceElementValue to clear first
     const nameInputs = await $$('//*[@hint="שם מלא" and @clickable="true"]');
     const nameInput = nameInputs[nameInputs.length - 1];
+    await driver.execute('mobile: replaceElementValue', { elementId: nameInput.elementId, text: '' });
+    await driver.pause(200);
     await nameInput.click();
-    await driver.pause(300);
-    await this.scrollDown(); // scroll down after keyboard pops to see the input
-    await typeText(name);
+    await driver.pause(200);
+    await driver.keys(name.split(''));
+    await driver.pause(500);
     try { await driver.hideKeyboard(); } catch (_) {}
-    await driver.pause(300);
-    await this.scrollDown(); // bring DOB field into view after keyboard dismissed
+    await driver.pause(500);
+    await scrollDown();
 
-    // Tap last תאריך לידה field by center coords (clickable=false)
     const dobFields = await $$('//*[contains(@hint, "תאריך לידה")]');
     const dobField = dobFields[dobFields.length - 1];
+    await dobField.waitForDisplayed({ timeout: 5000 });
     const loc  = await dobField.getLocation();
     const size = await dobField.getSize();
     const x = Math.round(loc.x + size.width / 2);
     const y = Math.round(loc.y + size.height / 2);
+    // First tap dismisses keyboard / unfocuses name field in Flutter
     await driver.execute('mobile: clickGesture', { x, y });
-    await driver.pause(500);
+    await driver.pause(800);
+    // Second tap actually opens the date picker
+    await driver.execute('mobile: clickGesture', { x, y });
+    await driver.pause(1000);
     await $('//*[contains(@content-desc, "Select year")]').click();
     await driver.pause(300);
     const yearEl = await $(
@@ -201,11 +211,11 @@ class ImportantDatesPage {
   }
 
   /**
-   * Tap the "+" button to add a new family member row, then scroll up.
+   * Tap the "+" button to add a new family member row.
    */
   async tapAddMember() {
-    await this.scrollDown(); // "+" gets pushed below fold as list grows
-    await this.addFamilyMember.waitForDisplayed({ timeout: 5000 });
+    await $(`-android uiautomator:new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("add_family_member_button"))`);
+    await driver.pause(300);
     await this.addFamilyMember.click();
     await driver.pause(500);
   }

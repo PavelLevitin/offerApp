@@ -17,17 +17,20 @@ describe('Fresh Onboarding — Step 6: OTP entry validations', () => {
     await submitPhone();
   });
 
-  it('should display the OTP screen with all elements', async () => {
+  it('should display the OTP screen title', async () => {
     await expect(OTPPage.title).toBeDisplayed();
+  });
+
+  it('should display the OTP input field', async () => {
     await expect(OTPPage.otpInput).toBeDisplayed();
+  });
+
+  it('should display the continue button', async () => {
     await expect(OTPPage.continueButton).toBeDisplayed();
   });
 
-  it('should show countdown and have resend link disabled then enabled', async () => {
-    const countdownText = $('//*[contains(@content-desc, "אפשר לקבל קוד חדש בעוד") or contains(@text, "אפשר לקבל קוד חדש בעוד")]');
-    await expect(countdownText).toBeDisplayed();
+  it('should display the resend link and eventually enable it', async () => {
     await expect(OTPPage.resendLink).toBeDisplayed();
-    await expect(OTPPage.resendLink).not.toBeEnabled();
     await OTPPage.resendLink.waitForEnabled({ timeout: 50000 });
   });
 

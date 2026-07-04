@@ -1,7 +1,8 @@
-const ImportantDatesPage = require('../../pageObjects/ImportantDatesPage');
-const testData           = require('../../data/testData');
-const sessionData        = require('../../data/sessionData');
-const { faker }          = require('@faker-js/faker');
+const ImportantDatesPage   = require('../../pageObjects/ImportantDatesPage');
+const CategoryAndShopsPage = require('../../pageObjects/CategoryAndShopsPage');
+const testData             = require('../../data/testData');
+const sessionData          = require('../../data/sessionData');
+const { faker }            = require('@faker-js/faker');
 const {
   goToWelcomeScreen,
   goThroughMallSelection,
@@ -13,7 +14,7 @@ const {
   deleteAccount,
 } = require('./helpers');
 
-describe('Fresh Onboarding — Step 8: Important dates', () => {
+describe('Fresh Onboarding — Steps 8–9: Important dates & Categories', () => {
   before(async () => {
     await goToWelcomeScreen();
     await goThroughMallSelection();
@@ -22,6 +23,8 @@ describe('Fresh Onboarding — Step 8: Important dates', () => {
     await waitAndEnterOTP();
     await completeRegistrationFormHappyPath();
   });
+
+  // ── Step 8: Important dates ──────────────────────────────────────────────
 
   it('should display the Important Dates screen', async () => {
     const header = $('//*[contains(@content-desc, "הצטרפות למועדון") or contains(@text, "הצטרפות למועדון")]');
@@ -61,6 +64,8 @@ describe('Fresh Onboarding — Step 8: Important dates', () => {
   });
 
   it('should allow adding up to 4 family members', async () => {
+    await $(`-android uiautomator:new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("add_family_member_button"))`);
+    await driver.pause(500);
     for (let i = 0; i < 4; i++) {
       if (i > 0) await ImportantDatesPage.tapAddMember();
       const name = faker.person.firstName();
@@ -80,6 +85,28 @@ describe('Fresh Onboarding — Step 8: Important dates', () => {
     expect(remainingButtons.length).toBe(3);
 
     await ImportantDatesPage.tapContinue();
+    await CategoryAndShopsPage.waitForScreen();
+  });
+
+  // ── Step 9: Categories and shops ─────────────────────────────────────────
+
+  it('should display the categories heading', async () => {
+    await expect($('//*[contains(@content-desc, "מה מעניין אותך")]')).toBeDisplayed();
+  });
+
+  it('should display the categories subtitle', async () => {
+    await expect($('//*[contains(@content-desc, "אפשר לבחור יותר מאפשרות אחת")]')).toBeDisplayed();
+  });
+
+  it('should display the Join button', async () => {
+    await expect(CategoryAndShopsPage.joinButton).toBeDisplayed();
+  });
+
+  it('should display the Complete Later button', async () => {
+    await expect(CategoryAndShopsPage.completeLaterButton).toBeDisplayed();
+  });
+
+  it('should complete categories selection and navigate to Home', async () => {
     await completeCategoriesHappyPath();
     await deleteAccount();
   });

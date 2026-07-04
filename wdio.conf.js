@@ -48,17 +48,17 @@ exports.config = {
   reporterSyncInterval: 500,      // how often to check reporter sync status
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000,
+    timeout: 180000,
     retries: 0,                   // no retries during debugging — stop on first failure
   },
   capabilities: [
     {
       platformName: 'Android',
-      'appium:deviceName': 'Samsung S22',
-      'appium:udid': 'R5CTA20GX1M',
+      'appium:deviceName': 'Samsung A54',
+      'appium:udid': 'R5CW710AMST',
       'appium:app': path.resolve(__dirname, './app-stage-release.apk'),
       'appium:automationName': 'UiAutomator2',
-      'appium:appWaitForLaunch': true,
+      'appium:appWaitForLaunch': false,
       'appium:newCommandTimeout': 240,
       'appium:noReset': false,
       'appium:fullReset': false,
@@ -79,11 +79,14 @@ exports.config = {
    */
   before: async function () {
     const { execSync } = require('child_process');
-    const deviceId = 'R5CTA20GX1M';
+    const deviceId = 'R5CW710AMST';
     const pkg      = 'com.ofermalls.myofer.stage';
-    const perms    = [
+
+    // Grant permissions via ADB so the app does not show dialogs on restart
+    const perms = [
       'android.permission.ACCESS_FINE_LOCATION',
       'android.permission.ACCESS_COARSE_LOCATION',
+      'android.permission.POST_NOTIFICATIONS',
     ];
     for (const perm of perms) {
       try {
@@ -92,6 +95,81 @@ exports.config = {
         console.warn(`Could not grant ${perm} — dialog may still appear`);
       }
     }
+
+    // Helper: try to tap any visible permission-dialog "allow" button
+    async function dismissPermissionDialogs() {
+      const selectors = [
+        // English — standard AOSP resource IDs
+        '-android uiautomator:new UiSelector().resourceId("com.android.permissioncontroller:id/permission_allow_button")',
+        '-android uiautomator:new UiSelector().resourceId("com.android.permissioncontroller:id/permission_allow_foreground_only_button")',
+        '-android uiautomator:new UiSelector().resourceId("com.android.permissioncontroller:id/permission_allow_one_time_button")',
+        // Samsung One UI may use different package
+        '-android uiautomator:new UiSelector().resourceId("com.samsung.android.permissioncontroller:id/permission_allow_button")',
+        '-android uiautomator:new UiSelector().resourceId("com.samsung.android.permissioncontroller:id/permission_allow_foreground_only_button")',
+        // English text fallbacks
+        '-android uiautomator:new UiSelector().text("Allow")',
+        '-android uiautomator:new UiSelector().text("While using the app")',
+        '-android uiautomator:new UiSelector().text("Only this time")',
+        '-android uiautomator:new UiSelector().text("Allow all the time")',
+        // Hebrew text fallbacks (Samsung One UI in Hebrew locale)
+        '-android uiautomator:new UiSelector().text("אפשר")',
+        '-android uiautomator:new UiSelector().text("בזמן השימוש באפליקציה")',
+        '-android uiautomator:new UiSelector().text("פעם אחת בלבד")',
+        '-android uiautomator:new UiSelector().text("תמיד")',
+      ];
+      for (let attempt = 0; attempt < 8; attempt++) {
+        let dismissed = false;
+        for (const sel of selectors) {
+          try {
+            const btn = await $(sel);
+            const exists = await btn.isExisting().catch(() => false);
+            if (exists) {
+              await btn.click();
+              await driver.pause(1000);
+              dismissed = true;
+              break;
+            }
+          } catch (_) {}
+        }
+        if (!dismissed) break;
+      }
+    }
+
+    // First pass: dismiss any dialog that appeared on initial launch
+    await dismissPermissionDialogs();
+
+    // Restart the app cleanly — permissions are now granted so no dialog should reappear
+    try {
+      execSync(`adb -s ${deviceId} shell am force-stop ${pkg}`, { stdio: 'ignore' });
+      await driver.pause(1000);
+      execSync(`adb -s ${deviceId} shell am start -n ${pkg}/com.ofermalls.myofer.MainActivity`, { stdio: 'ignore' });
+    } catch (_) {}
+    await driver.pause(5000);
+
+    // Second pass: dismiss any residual dialog after restart
+    await dismissPermissionDialogs();
+
+    // Diagnostic: log what is on screen so we can debug selector mismatches
+    try {
+      const source = await driver.getPageSource();
+      const hasWelcome    = source.includes('Welcome');
+      const hasPermission = source.toLowerCase().includes('permission');
+      const hasAllow      = source.includes('Allow') || source.includes('אפשר');
+      console.log(`\n[before] Screen state — hasWelcome:${hasWelcome}  hasPermission:${hasPermission}  hasAllow:${hasAllow}`);
+      if (!hasWelcome) {
+        // Log a chunk of the source so we can see what element names / content-desc are present
+        const snippet = source.replace(/\s+/g, ' ').substring(0, 1500);
+        console.log('[before] Page source snippet:', snippet);
+      }
+    } catch (_) {}
+
+    // Save a diagnostic screenshot to reports/screenshots/before_hook.png
+    try {
+      const fs = require('fs');
+      fs.mkdirSync('./reports/screenshots', { recursive: true });
+      await driver.saveScreenshot('./reports/screenshots/before_hook.png');
+      console.log('[before] Screenshot saved → reports/screenshots/before_hook.png');
+    } catch (_) {}
   },
 
   /**
@@ -158,6 +236,12 @@ exports.config = {
   },
 
   onComplete: function () {
+    // Uninstall the app so the next run always starts from a fresh install
+    try {
+      execSync('adb -s R5CW710AMST uninstall com.ofermalls.myofer.stage', { stdio: 'ignore' });
+      console.log('App uninstalled after test run.');
+    } catch (_) {}
+
     if (appiumPid) {
       console.log('Stopping Appium server...');
       try { execSync(`taskkill /F /T /PID ${appiumPid}`, { stdio: 'ignore' }); } catch (_) {}

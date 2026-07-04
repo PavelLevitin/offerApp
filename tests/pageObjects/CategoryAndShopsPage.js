@@ -295,26 +295,30 @@ class CategoryAndShopsPage {
   }
 
   async scrollDown() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 1400 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.75) })
       .down({ button: 0 })
-      .move({ duration: 500, x: 540, y: 400 })
+      .move({ duration: 500, x: cx, y: Math.round(height * 0.20) })
       .up({ button: 0 })
       .perform();
     await driver.pause(400);
   }
 
   async scrollUp() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 400 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.20) })
       .down({ button: 0 })
-      .move({ duration: 500, x: 540, y: 1400 })
+      .move({ duration: 500, x: cx, y: Math.round(height * 0.75) })
       .up({ button: 0 })
       .perform();
     await driver.pause(400);

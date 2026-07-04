@@ -44,14 +44,14 @@ class WelcomePage {
    * Mall items have their status ("פתוח" = open, "סגור" = closed) in content-desc.
    */
   get firstMallItem() {
-    return $('(//*[contains(@content-desc, "פתוח") and @clickable="true"])[1]');
+    return $('(//*[(contains(@content-desc, "פתוח") or contains(@content-desc, "סגור")) and @clickable="true"])[1]');
   }
 
   /**
    * All visible mall items in the list.
    */
   get mallItems() {
-    return $$('//*[contains(@content-desc, "פתוח") and @clickable="true"]');
+    return $$('//*[(contains(@content-desc, "פתוח") or contains(@content-desc, "סגור")) and @clickable="true"]');
   }
 
   // ── Actions ────────────────────────────────────────────────────────────────
@@ -82,8 +82,12 @@ class WelcomePage {
   }
 
   async scrollToTop() {
+    const { width, height } = await driver.getWindowSize();
     await driver.execute('mobile: scrollGesture', {
-      left: 100, top: 300, width: 800, height: 1500,
+      left: Math.round(width * 0.09),
+      top: Math.round(height * 0.13),
+      width: Math.round(width * 0.74),
+      height: Math.round(height * 0.64),
       direction: 'up',
       percent: 3.0,
     });
@@ -108,13 +112,15 @@ class WelcomePage {
    * VirtualizedList only renders items into the accessibility tree once visible.
    */
   async scrollToMallList() {
+    const { width, height } = await driver.getWindowSize();
+    const cx = Math.round(width / 2);
     await driver.action('pointer', {
       type: 'pointer', id: 'finger1',
       parameters: { pointerType: 'touch' },
     })
-      .move({ duration: 0, x: 540, y: 1600 })
+      .move({ duration: 0, x: cx, y: Math.round(height * 0.75) })
       .down({ button: 0 })
-      .move({ duration: 300, x: 540, y: 520 })
+      .move({ duration: 300, x: cx, y: Math.round(height * 0.25) })
       .up({ button: 0 })
       .perform();
     await driver.pause(300);
